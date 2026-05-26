@@ -1,0 +1,17 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese la medida de los lados del cuadrado: ");
+            double lado = Convert.ToDouble(Console.ReadLine());
+            double perimetro = lado * 4;
+            double area = lado * lado;
+            Console.WriteLine($"El perimetro del cuadrado es de: {perimetro}");
+            Console.WriteLine($"El area del cuadrado es de: {area}");
+
+        }
+    }
+}
