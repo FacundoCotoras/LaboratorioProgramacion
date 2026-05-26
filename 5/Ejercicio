@@ -1,0 +1,18 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese una fecha en formato DDMMAA: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int fecha = x / 100;
+            fecha = fecha % 100;
+            Console.WriteLine($"Fecha: {x}");
+            Console.WriteLine($"Mes: {fecha}");
+
+        }
+    }
+}
