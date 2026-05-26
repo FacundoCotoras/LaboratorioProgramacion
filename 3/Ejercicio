@@ -1,0 +1,17 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Precio de lista: ");
+            double precio = Convert.ToDouble(Console.ReadLine());
+            double desc = precio*0.18;
+            precio = precio - desc;
+            Console.WriteLine($"Descuento: {desc} ");
+            Console.WriteLine($"El precio con el descuento: {precio}");
+        }
+    }
+}
