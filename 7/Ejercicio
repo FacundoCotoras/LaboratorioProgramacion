@@ -1,0 +1,16 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese la paga por hora: ");
+            double PxH = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ingrese cuantas horas se trabajaron: ");
+            double H = Convert.ToDouble(Console.ReadLine());
+            double sueldo = PxH * H;
+            Console.Write($"El sueldo final fue de: {sueldo}");
+        }
+    }
+}
