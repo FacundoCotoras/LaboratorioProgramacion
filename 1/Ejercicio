@@ -1,0 +1,19 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese un numero de 2 cifras: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+            int numeroDecena = numero / 10;
+            Console.WriteLine($"La decena es: {numeroDecena}");
+            int numeroUnidad = numero % 10;
+            Console.WriteLine($"La unidad es: {numeroUnidad} ");
+        
+
+        }
+    }
+}
