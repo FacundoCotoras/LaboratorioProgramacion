@@ -1,0 +1,19 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese un numero de 3 digitos: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+            int unidad = numero % 10;
+            int decena = (numero / 10) % 10;
+            int centena = numero / 100;
+            Console.WriteLine($"Valor ingresado: {numero}");
+            Console.WriteLine($"Unidad: {unidad}");
+            Console.WriteLine($"Decena: {decena}");
+            Console.WriteLine($"Centena: {centena}");
+        }
+    }
+}
