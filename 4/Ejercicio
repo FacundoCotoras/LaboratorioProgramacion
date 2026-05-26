@@ -1,0 +1,20 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Indicar un valor de 2 cifras: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+            int numeroDecena = numero / 10;
+            int numeroUnidad = numero % 10;
+            Console.WriteLine($"Valor: {numero}");
+            Console.Write("Valor permutado: ");
+            Console.Write(numeroUnidad);
+            Console.WriteLine(numeroDecena);
+
+        }
+    }
+}
