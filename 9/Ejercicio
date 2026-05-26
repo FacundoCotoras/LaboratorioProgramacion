@@ -1,0 +1,26 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese las horas del 1er instante: ");
+            int hora1 = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese los minutos del 1er instante: ");
+            int min1 = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese los segundos del 1er instante: ");
+            int seg1 = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese las horas del 2do instante: ");
+            int hora2 = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese los minutos del 2do instante: ");
+            int min2 = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese los segundos del 2do instante: ");
+            int seg2 = Convert.ToInt16(Console.ReadLine());
+            int primerInstante = hora1 * 3600 + min1 * 60 + seg1;
+            int segundoInstante = hora2 * 3600 + min2 * 60 + seg2;
+            int diferencia = primerInstante - segundoInstante;
+            Console.WriteLine($"La diferencia entre los 2 instantes en segundos es de: {diferencia}");
+        }
+    }
+}
