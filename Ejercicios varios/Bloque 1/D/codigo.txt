@@ -1,0 +1,26 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string clave = "Hipopotamo";
+            Console.WriteLine("Tiene 5 intentos para poner la contraseña correcta: ");
+            for (int i = 0; i < 5; i++)
+            {
+                string contrasena = Console.ReadLine();
+                if (contrasena == clave)
+                {
+                    Console.WriteLine("Contraseña correcta, bienvenido");
+                    break;
+
+                }
+                else
+                {
+                    Console.WriteLine("Contraseña incorrecta, intente de nuevo");
+                }
+            }
+        }
+    }
+}

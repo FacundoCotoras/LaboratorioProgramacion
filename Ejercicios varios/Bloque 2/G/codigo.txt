@@ -1,0 +1,25 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int contador = 0;
+
+            Console.Write("Números pares entre 1 y 100: ");
+
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    contador = contador + 1;
+                    Console.Write(i + " - ");
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Entre 1 y 100 hay {contador} números pares.");
+        }
+    }
+}

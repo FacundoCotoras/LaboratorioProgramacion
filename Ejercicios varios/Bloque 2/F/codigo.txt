@@ -1,0 +1,29 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int contador = 1;
+            string nombre;
+
+            Console.WriteLine("Sistema de turnos. Escriba 'fin' para terminar");
+
+            do
+            {
+                Console.Write("Ingrese un nombre: ");
+                nombre = Console.ReadLine();
+
+                if (nombre.ToLower() != "fin")
+                {
+                    Console.WriteLine($"Turno {contador}: {nombre}");
+                    contador++;
+                }
+
+            } while (nombre.ToLower() != "fin");
+
+            Console.WriteLine("\nFin del sistema de turnos.");
+        }
+    }
+}

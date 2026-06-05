@@ -1,0 +1,27 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese la contraseña: ");
+            string pass1 = Console.ReadLine();
+            string pass2;
+
+            do
+            {
+                Console.Write("Repita la contraseña: ");
+                pass2 = Console.ReadLine();
+
+                if (pass1 != pass2)
+                {
+                    Console.WriteLine("Las contraseñas no coinciden. Intente de nuevo.");
+                }
+
+            } while (pass1 != pass2);
+
+            Console.WriteLine("Acceso permitido");
+        }
+        }
+    }

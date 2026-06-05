@@ -1,0 +1,22 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese su edad: ");
+           int edad = Convert.ToInt16(Console.ReadLine());
+            if (edad < 18)
+            {
+                Console.WriteLine("Sos menor de edad");
+            } else if (edad == 18)
+            {
+                Console.WriteLine("Tenes 18 años");
+            } else  
+                Console.WriteLine("Sos mayor de edad");
+            
+        }
+
+    }
+}

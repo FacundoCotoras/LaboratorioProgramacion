@@ -1,0 +1,34 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int secreto = rnd.Next(1, 11);
+            int intento;
+
+            Console.WriteLine("Adiviná el número del 1 al 10:");
+
+            do
+            {
+                intento = Convert.ToInt16(Console.ReadLine());
+
+                if (intento > secreto)
+                {
+                    Console.WriteLine("El número secreto es menor.");
+                }
+                else if (intento < secreto)
+                {
+                    Console.WriteLine("El número secreto es mayor.");
+                }
+                else
+                {
+                    Console.WriteLine("¡Acertaste! Acceso permitido.");
+                }
+
+            } while (intento != secreto);
+        }
+        }
+    }

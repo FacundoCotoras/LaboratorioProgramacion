@@ -1,0 +1,24 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese su edad: ");
+            int edad = Convert.ToInt16(Console.ReadLine());
+            if (edad < 16)
+            {
+                Console.WriteLine("Sos muy menor, no podes manejar ni votar");
+            }
+            else if (edad >= 16 && edad < 18)
+            {
+                Console.WriteLine("Sos menor, no podes manejar pero si votar");
+            }
+            else
+            {
+                Console.WriteLine("Sos mayor, podes votar y manejar");
+            }
+        }
+    }
+}

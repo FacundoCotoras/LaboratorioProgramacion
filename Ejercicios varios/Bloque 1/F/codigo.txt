@@ -1,0 +1,14 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese su nombre: ");
+            string nombre = Console.ReadLine();
+            string primermayuscula = nombre.Substring(0, 1).ToUpper() + nombre.Substring(1).ToLower();
+            Console.WriteLine($"Hola {primermayuscula}");
+        }
+    }
+}

@@ -1,0 +1,31 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string opcion;
+
+            Console.WriteLine("Conversor de Celsius a Fahrenheit");
+            Console.WriteLine("Escriba 'salir' para terminar.");
+
+            do
+            {
+                Console.Write("Ingrese una temperatura en Celsius: ");
+                opcion = Console.ReadLine().ToLower();
+
+                if (opcion != "salir")
+                {
+                    int celsius = Convert.ToInt16(opcion);
+                    int fahrenheit = (celsius * 9 / 5) + 32;
+
+                    Console.WriteLine($"{celsius} °C equivalen a {fahrenheit} °F");
+                }
+
+            } while (opcion != "salir");
+
+            Console.WriteLine("Programa finalizado.");
+        }
+    }
+}

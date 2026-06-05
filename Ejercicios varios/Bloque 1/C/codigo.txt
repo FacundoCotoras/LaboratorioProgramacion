@@ -1,0 +1,16 @@
+using System;
+using System.Threading.Tasks;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine();
+            int cantidad = palabra.Length;
+            Console.WriteLine($"La palabra tiene {cantidad} letras.");
+        }
+
+    }
+}

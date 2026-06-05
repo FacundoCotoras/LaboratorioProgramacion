@@ -1,0 +1,16 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Tabla del 7: ");
+            for (int i = 0; i < 11; i++)
+            {
+                int num = 7 * i;
+                Console.WriteLine($"7x{i} = {num}");
+            }
+        }
+    }
+}

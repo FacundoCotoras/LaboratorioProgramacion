@@ -1,0 +1,45 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Seleccione la operación: suma, resta, multiplicacion o division");
+            string operacion = Console.ReadLine().ToLower();
+
+            Console.Write("Ingrese el primer número: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Ingrese el segundo número: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            double resultado = 0;
+
+            if (operacion == "suma")
+            {
+                resultado = num1 + num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else if (operacion == "resta")
+            {
+                resultado = num1 - num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else if (operacion == "multiplicacion")
+            {
+                resultado = num1 * num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else if (operacion == "division")
+            {
+                resultado = num1 / num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else
+            {
+                Console.WriteLine("Operación inválida.");
+            }
+        }
+    }
+}

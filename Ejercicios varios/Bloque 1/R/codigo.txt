@@ -1,0 +1,26 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese una oración: ");
+            string frase = Console.ReadLine().ToLower();
+
+            int contadorA = 0;
+
+            for (int i = 0; i < frase.Length; i++)
+            {
+                string letra = frase.Substring(i, 1);
+
+                if (letra == "a")
+                {
+                    contadorA++;
+                }
+            }
+
+            Console.WriteLine($"La oración tiene {contadorA} letras 'a'.");
+        }
+        }
+    }

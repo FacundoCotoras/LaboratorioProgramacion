@@ -1,0 +1,20 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero = 50;
+            for (int i = 50; i > 0; i--)
+            {
+                if (numero % 5 == 0)
+                {
+                    Console.WriteLine(numero);
+                }
+                numero = numero - 1;
+
+            }
+        }
+    }
+}
