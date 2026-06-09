@@ -1,0 +1,1208 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ////////////////////////////////////////
+            ////////////////Bloque 1////////////////
+            ////////////////////////////////////////
+
+              Multiplos3();
+              MayorEdad();
+              LetrasPalabra();
+              Contraseña();
+              NumeroMayor(); 
+              Saludo();
+              Tabla7();
+              CuentaRegresiva(); 
+              NumeroParImpar();
+              Vocales(); 
+              Tabla12();
+              TotalAcumulado();
+              Letras();
+              Edad();  
+              CincuentaACero();
+              AccesoPermitido(); 
+              NombreLargo();
+              LetrasA(); 
+  
+            ////////////////////////////////////////
+            ////////////////Bloque 2////////////////
+            ////////////////////////////////////////
+             Azar();
+             Divisores();
+             Fibonacci();
+             Calculadora();
+             Factorial();
+             Turnos();
+             Pares(); 
+             Termometro();
+             Primo();
+             Saludos();  
+             SistemaNombres();
+             NumerosMultiplo7TerminadosEn3();
+             CargarPrecios();
+             Formulario();
+             MostrarDigitos();
+             PiedraPapelTijera(); 
+             NumerosAleatorios(); 
+             NotasAlumnos();
+             AbecedarioInverso();
+
+             ////////////////////////////////////////
+             ////////////////Bloque 3////////////////
+             ////////////////////////////////////////
+             Votacion();
+             NumerosImpares();
+             ContarLetra();
+             CuentaBancaria();
+             Divisibles2o5(); 
+             PosicionesAbecedario();
+             JuegoAdivinanza();   
+             InvertirPalabras();
+             ContarLetras();
+             SistemaIngreso();  
+             MostrarRango();
+             CalcularIMC(); 
+             PiramidePalabra();
+             ReemplazarVocales();
+        }
+
+
+        static void Multiplos3()
+        {
+
+            for (int i = 0; i <= 100; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    if (i != 0)
+                    {
+                        Console.WriteLine(i);
+
+                    }
+                }
+            }
+        }
+        static void MayorEdad()
+        {
+            Console.Write("Ingrese su edad: ");
+            int edad = Convert.ToInt16(Console.ReadLine());
+            if (edad < 18)
+            {
+                Console.WriteLine("Sos menor de edad");
+            }
+            else if (edad == 18)
+            {
+                Console.WriteLine("Tenes 18 años");
+            }
+            else
+                Console.WriteLine("Sos mayor de edad");
+
+        }
+        static void LetrasPalabra()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine();
+            int cantidad = palabra.Length;
+            Console.WriteLine($"La palabra tiene {cantidad} letras.");
+
+        }
+        static void Contraseña()
+        {
+            string clave = "Hipopotamo";
+            Console.WriteLine("Tiene 5 intentos para poner la contraseña correcta: ");
+            for (int i = 0; i < 5; i++)
+            {
+                string contrasena = Console.ReadLine();
+                if (contrasena == clave)
+                {
+                    Console.WriteLine("Contraseña correcta, bienvenido");
+                    break;
+
+                }
+                else
+                {
+                    Console.WriteLine("Contraseña incorrecta, intente de nuevo");
+                }
+            }
+        }
+        static void NumeroMayor()
+        {
+            Console.WriteLine("Ingrese 10 numeros y se le dira cual fue el mayor: ");
+            int mayor = -999999999;
+            for (int i = 0; i < 10; i++)
+            {
+                int numero = Convert.ToInt16(Console.ReadLine());
+                if (numero >= mayor)
+                {
+                    mayor = numero;
+                }
+            }
+            Console.WriteLine($"El numero mayor fue {mayor}");
+        }
+        static void Saludo()
+        {
+            Console.Write("Ingrese su nombre: ");
+            string nombre = Console.ReadLine();
+            string primermayuscula = nombre.Substring(0, 1).ToUpper() + nombre.Substring(1).ToLower();
+            Console.WriteLine($"Hola {primermayuscula}");
+
+        }
+        static void Tabla7()
+        {
+            Console.WriteLine("Tabla del 7: ");
+            for (int i = 0; i < 11; i++)
+            {
+                int num = 7 * i;
+                Console.WriteLine($"7x{i} = {num}");
+            }
+
+        }
+        static void CuentaRegresiva()
+        {
+            int num = 11;
+            int regresivo = num;
+            for (int i = 0; i < 10; i++)
+            {
+                regresivo = regresivo - 1;
+                Console.WriteLine(regresivo);
+            }
+            Console.WriteLine("oa");
+
+        }
+        static void NumeroParImpar()
+        {
+            Console.Write("Ingrese un numero: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+            if (numero % 2 == 0)
+            {
+                Console.WriteLine("El numero es par");
+            }
+            else
+            {
+                Console.WriteLine("El numero es impar");
+            }
+        }
+        static void Vocales()
+        {
+            Console.Write("Ingrese una frase: ");
+            string frase = Console.ReadLine().ToLower();
+            int vocales = 0;
+            for (int i = 0; i < frase.Length; i++)
+            {
+                string letra = frase.Substring(i, 1);
+
+                if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u")
+                {
+                    vocales++;
+                }
+            }
+            Console.WriteLine($"La frase tiene {vocales} vocales");
+
+        }
+        static void Tabla12()
+        {
+            Console.Write("Ingrese un numero: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+            for (int i = 0; i < 13; i++)
+            {
+                Console.WriteLine($"{i}x{numero} = {i * numero}");
+            }
+        }
+        static void TotalAcumulado()
+        {
+            int suma = 0;
+
+            while (suma <= 100)
+            {
+                Console.Write("Ingrese un numero: ");
+                suma = suma + Convert.ToInt16(Console.ReadLine());
+            }
+
+            Console.WriteLine("Total acumulado: " + suma);
+
+        }
+        static void Letras()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine();
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                string letra = palabra.Substring(i, 1);
+                Console.WriteLine(letra);
+            }
+        }
+        static void Edad()
+        {
+            Console.Write("Ingrese su edad: ");
+            int edad = Convert.ToInt16(Console.ReadLine());
+            if (edad < 16)
+            {
+                Console.WriteLine("Sos muy menor, no podes manejar ni votar");
+            }
+            else if (edad >= 16 && edad < 18)
+            {
+                Console.WriteLine("Sos menor, no podes manejar pero si votar");
+            }
+            else
+            {
+                Console.WriteLine("Sos mayor, podes votar y manejar");
+            }
+        }
+        static void CincuentaACero()
+        {
+            int numero = 50;
+            for (int i = 50; i > 0; i--)
+            {
+                if (numero % 5 == 0)
+                {
+                    Console.WriteLine(numero);
+                }
+                numero = numero - 1;
+            }
+        }
+        static void AccesoPermitido()
+        {
+            Console.Write("Ingrese la contraseña: ");
+            string pass1 = Console.ReadLine();
+            string pass2;
+
+            do
+            {
+                Console.Write("Repita la contraseña: ");
+                pass2 = Console.ReadLine();
+
+                if (pass1 != pass2)
+                {
+                    Console.WriteLine("Las contraseñas no coinciden. Intente de nuevo.");
+                }
+
+            } while (pass1 != pass2);
+
+            Console.WriteLine("Acceso permitido");
+        }
+        static void NombreLargo()
+        {
+            string nombre;
+
+            do
+            {
+                Console.Write("Ingrese un nombre: ");
+                nombre = Console.ReadLine();
+
+                Console.WriteLine($"Ingresaste: {nombre}");
+
+            } while (nombre.Length <= 10);
+
+            Console.WriteLine("El programa terminó porque el nombre tiene más de 10 caracteres.");
+
+        }
+        static void LetrasA()
+        {
+            Console.Write("Ingrese una oración: ");
+            string frase = Console.ReadLine().ToLower();
+
+            int contadorA = 0;
+
+            for (int i = 0; i < frase.Length; i++)
+            {
+                string letra = frase.Substring(i, 1);
+
+                if (letra == "a")
+                {
+                    contadorA++;
+                }
+            }
+
+            Console.WriteLine($"La oración tiene {contadorA} letras 'a'.");
+        }
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+
+        static void Azar()
+        {
+            Random rnd = new Random();
+            int secreto = rnd.Next(1, 11);
+            int intento;
+
+            Console.WriteLine("Adiviná el número del 1 al 10:");
+
+            do
+            {
+                intento = Convert.ToInt16(Console.ReadLine());
+
+                if (intento > secreto)
+                {
+                    Console.WriteLine("El número secreto es menor.");
+                }
+                else if (intento < secreto)
+                {
+                    Console.WriteLine("El número secreto es mayor.");
+                }
+                else
+                {
+                    Console.WriteLine("¡Acertaste! Acceso permitido.");
+                }
+
+            } while (intento != secreto);
+
+        }
+        static void Divisores()
+        {
+            Console.Write("Ingrese un número: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine($"Los divisores de {numero} son:");
+
+            for (int i = 1; i <= numero; i++)
+            {
+                if (numero % i == 0)
+                {
+                    Console.WriteLine(i);
+
+                }
+            }
+        }
+        static void Fibonacci()
+        {
+            int a = 0;
+            int b = 1;
+            int c;
+
+            Console.WriteLine("Los primeros 20 números de la serie de Fibonacci son:");
+
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine(a);
+                c = a + b;
+                a = b;
+                b = c;
+            }
+        }
+        static void Calculadora()
+        {
+            Console.WriteLine("Seleccione la operación: suma, resta, multiplicacion o division");
+            string operacion = Console.ReadLine().ToLower();
+
+            Console.Write("Ingrese el primer número: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Ingrese el segundo número: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            double resultado = 0;
+
+            if (operacion == "suma")
+            {
+                resultado = num1 + num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else if (operacion == "resta")
+            {
+                resultado = num1 - num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else if (operacion == "multiplicacion")
+            {
+                resultado = num1 * num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else if (operacion == "division")
+            {
+                resultado = num1 / num2;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            else
+            {
+                Console.WriteLine("Operación inválida.");
+            }
+        }
+        static void Factorial()
+        {
+            Console.Write("Ingrese un número: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+
+            int factorial = 1;
+
+            for (int i = 1; i <= numero; i++)
+            {
+                factorial = factorial * i;
+            }
+
+            Console.WriteLine($"El factorial de {numero} es: {factorial}");
+
+        }
+        static void Turnos()
+        {
+            int contador = 1;
+            string nombre;
+
+            Console.WriteLine("Sistema de turnos. Escriba 'fin' para terminar");
+
+            do
+            {
+                Console.Write("Ingrese un nombre: ");
+                nombre = Console.ReadLine();
+
+                if (nombre.ToLower() != "fin")
+                {
+                    Console.WriteLine($"Turno {contador}: {nombre}");
+                    contador++;
+                }
+
+            } while (nombre.ToLower() != "fin");
+
+            Console.WriteLine("\nFin del sistema de turnos.");
+
+        }
+        static void Pares()
+        {
+            int contador = 0;
+
+            Console.Write("Números pares entre 1 y 100: ");
+
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    contador = contador + 1;
+                    Console.Write(i + " - ");
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Entre 1 y 100 hay {contador} números pares.");
+
+        }
+        static void Termometro()
+        {
+             string opcion;
+
+        Console.WriteLine("Conversor de Celsius a Fahrenheit");
+            Console.WriteLine("Escriba 'salir' para terminar.");
+
+            do
+            {
+                Console.Write("Ingrese una temperatura en Celsius: ");
+                opcion = Console.ReadLine().ToLower();
+
+                if (opcion != "salir")
+                {
+                    int celsius = Convert.ToInt16(opcion);
+                    int fahrenheit = (celsius * 9 / 5) + 32;
+
+                     Console.WriteLine($"{celsius} °C equivalen a {fahrenheit} °F");
+                }
+
+            } while (opcion != "salir") ;
+
+            Console.WriteLine("Programa finalizado.");
+
+        }
+        static void Primo()
+        {
+            Console.Write("Ingrese un número: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+
+            bool esPrimo = true;
+
+            if (numero <= 1)
+            {
+                esPrimo = false;
+            }
+            else
+            {
+                for (int i = 2; i < numero; i++)
+                {
+                    if (numero % i == 0)
+                    {
+                        esPrimo = false;
+                        break;
+                    }
+                }
+            }
+
+            if (esPrimo)
+            {
+                Console.WriteLine($"{numero} es primo.");
+            }
+            else
+            {
+                Console.WriteLine($"{numero} no es primo.");
+            }
+
+        }
+        static void Saludos()
+        {
+            string[] nombres = new string[100];
+            int cantidad = 0;
+            string nombre;
+
+            Console.WriteLine("Ingrese nombres (escriba 'fin' para terminar):");
+
+            do
+            {
+                nombre = Console.ReadLine();
+
+                if (nombre.ToLower() != "fin")
+                {
+                    nombres[cantidad] = nombre;
+                    cantidad++;
+                }
+
+            } while (nombre.ToLower() != "fin");
+
+            Console.WriteLine("Saludos:");
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                Console.WriteLine($"Hola {nombres[i]}!");
+            }
+
+        }
+        static void SistemaNombres()
+        {
+            string[] nombres = new string[100];
+            int cantidad = 0;
+            bool repetido = false;
+
+            Console.WriteLine("Ingrese nombres (se detiene cuando se repita alguno):");
+
+            while (!repetido)
+            {
+                string nombre = Console.ReadLine();
+
+              
+                for (int i = 0; i < cantidad; i++)
+                {
+                    if (nombres[i].ToLower() == nombre.ToLower())
+                    {
+                        repetido = true;
+                        break;
+                    }
+                }
+
+                if (!repetido)
+                {
+                    nombres[cantidad] = nombre;
+                    cantidad++;
+                }
+            }
+
+            Console.WriteLine($"Se ingresaron {cantidad} nombres antes del duplicado.");
+        }
+        static void NumerosMultiplo7TerminadosEn3()
+        {
+            Console.WriteLine("Números entre 100 y 200 que son múltiplos de 7 y terminan en 3:");
+
+            for (int i = 100; i <= 200; i++)
+            {
+                if (i % 7 == 0 && i % 10 == 3)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+        static void CargarPrecios()
+        {
+            int total = 0;
+            int cantidad = 0;
+
+            Console.WriteLine("Ingrese precios de productos (se detiene cuando el total supere 1000):");
+
+            while (total <= 1000)
+            {
+                Console.Write("Precio: ");
+                int precio = Convert.ToInt16(Console.ReadLine());
+
+                total += precio;
+                cantidad++;
+            }
+
+            Console.WriteLine($"Se cargaron {cantidad} productos antes de superar $1000.");
+        }
+        static void Formulario()
+        {
+            Console.Write("Ingrese su nombre: ");
+            string nombre = Console.ReadLine();
+
+            int edad;
+            bool edadValida = false;
+
+            do
+            {
+                Console.Write("Ingrese su edad: ");
+                string entrada = Console.ReadLine();
+
+                if (int.TryParse(entrada, out edad))
+                {
+                    edadValida = true;
+                }
+                else
+                {
+                    Console.WriteLine("La edad debe ser un número.");
+                }
+
+            } while (!edadValida);
+
+            string mail;
+            bool mailValido = false;
+
+            do
+            {
+                Console.Write("Ingrese su mail: ");
+                mail = Console.ReadLine();
+
+                if (mail.Contains("@"))
+                {
+                    mailValido = true;
+                }
+                else
+                {
+                    Console.WriteLine("El mail debe contener '@'.");
+                }
+
+            } while (!mailValido);
+
+            Console.WriteLine("Formulario completado:");
+            Console.WriteLine($"Nombre: {nombre}");
+            Console.WriteLine($"Edad: {edad}");
+            Console.WriteLine($"Mail: {mail}");
+        }
+
+        static void MostrarDigitos()
+        {
+           Console.Write("Ingrese un número: ");
+           string numero = Console.ReadLine();
+
+           Console.WriteLine("Los dígitos son:");
+
+           for (int i = 0; i < numero.Length; i++)
+           {
+             Console.WriteLine(numero[i]);
+           }
+        }
+        static void PiedraPapelTijera()
+        {
+            int victoriasUsuario = 0;
+            int victoriasPC = 0;
+            Random rnd = new Random();
+
+            Console.WriteLine("Juego: Piedra, Papel o Tijera (3 rondas)");
+
+            for (int ronda = 1; ronda <= 3; ronda++)
+            {
+                Console.WriteLine($"Ronda {ronda}:");
+
+                string usuario;
+                do
+                {
+                    Console.Write("Elija (piedra, papel o tijera): ");
+                    usuario = Console.ReadLine().ToLower();
+
+                    if (usuario != "piedra" && usuario != "papel" && usuario != "tijera")
+                    {
+                        Console.WriteLine("Entrada inválida. Debe ser piedra, papel o tijera.");
+                    }
+
+                } while (usuario != "piedra" && usuario != "papel" && usuario != "tijera");
+
+                int jugadaPC = rnd.Next(3);
+                string pc;
+
+                if (jugadaPC == 0)
+                    pc = "piedra";
+                else if (jugadaPC == 1)
+                    pc = "papel";
+                else
+                    pc = "tijera";
+
+                Console.WriteLine($"La PC eligió: {pc}");
+
+                if (usuario == pc)
+                {
+                    Console.WriteLine("Empate.");
+                }
+                else if ((usuario == "piedra" && pc == "tijera") ||
+                         (usuario == "papel" && pc == "piedra") ||
+                         (usuario == "tijera" && pc == "papel"))
+                {
+                    Console.WriteLine("Ganaste esta ronda.");
+                    victoriasUsuario++;
+                }
+                else
+                {
+                    Console.WriteLine("La PC ganó esta ronda.");
+                    victoriasPC++;
+                }
+            }
+
+            Console.WriteLine("Resultado final:");
+            if (victoriasUsuario > victoriasPC)
+                Console.WriteLine($"Ganaste más rondas ({victoriasUsuario} vs {victoriasPC}).");
+            else if (victoriasPC > victoriasUsuario)
+                Console.WriteLine($"La PC ganó más rondas ({victoriasPC} vs {victoriasUsuario}).");
+            else
+                Console.WriteLine($"Empate total ({victoriasUsuario} vs {victoriasPC}).");
+        }
+        static void NumerosAleatorios()
+        {
+            Random rnd = new Random();
+            int mayores50 = 0;
+
+            Console.WriteLine("Los 10 números generados son:");
+
+            for (int i = 0; i < 10; i++)
+            {
+                int numero = rnd.Next(1, 101); // entre 1 y 100
+                Console.WriteLine(numero);
+
+                if (numero > 50)
+                {
+                    mayores50++;
+                }
+            }
+
+            Console.WriteLine($"Cantidad de números mayores a 50: {mayores50}");
+        }
+        static void NotasAlumnos()
+        {
+            string mejorNombre = "";
+            int mejorNota = -1;
+            int sumaNotas = 0;
+
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.Write($"Ingrese el nombre del alumno {i}: ");
+                string nombre = Console.ReadLine();
+
+                Console.Write($"Ingrese la nota de {nombre}: ");
+                int nota = Convert.ToInt32(Console.ReadLine());
+
+                sumaNotas += nota;
+
+                if (nota > mejorNota)
+                {
+                    mejorNota = nota;
+                    mejorNombre = nombre;
+                }
+            }
+
+            double promedio = (double)sumaNotas / 5;
+
+            Console.WriteLine($"Promedio general: {promedio}");
+            Console.WriteLine($"La mejor nota fue de {mejorNombre} con {mejorNota}");
+        }
+        static void AbecedarioInverso()
+        {
+            Console.Write("Abecedario en orden inverso:");
+
+            for (char letra = 'Z'; letra >= 'A'; letra--)
+            {
+                Console.Write($" -{letra}- ");
+            }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+        static void Votacion()
+        {
+            int opcion1 = 0;
+            int opcion2 = 0;
+            int opcion3 = 0;
+
+            Console.WriteLine("Opciones de votación:");
+            Console.WriteLine("1 - Opción A");
+            Console.WriteLine("2 - Opción B");
+            Console.WriteLine("3 - Opción C");
+            Console.WriteLine("Escriba 'terminar' para finalizar.");
+
+            string voto;
+            do
+            {
+                Console.Write("Ingrese su voto: ");
+                voto = Console.ReadLine().ToLower();
+
+                if (voto == "1")
+                    opcion1++;
+                else if (voto == "2")
+                    opcion2++;
+                else if (voto == "3")
+                    opcion3++;
+                else if (voto != "terminar")
+                    Console.WriteLine("Voto inválido. Use 1, 2, 3 o 'terminar'.");
+
+            } while (voto != "terminar");
+
+            Console.WriteLine("Resultados:");
+            Console.WriteLine($"Opción A: {opcion1} votos");
+            Console.WriteLine($"Opción B: {opcion2} votos");
+            Console.WriteLine($"Opción C: {opcion3} votos");
+
+            if (opcion1 > opcion2 && opcion1 > opcion3)
+                Console.WriteLine("Ganó la Opción A.");
+            else if (opcion2 > opcion1 && opcion2 > opcion3)
+                Console.WriteLine("Ganó la Opción B.");
+            else if (opcion3 > opcion1 && opcion3 > opcion2)
+                Console.WriteLine("Ganó la Opción C.");
+            else
+                Console.WriteLine("Hubo empate.");
+        }
+
+        static void NumerosImpares()
+        {
+            Console.Write("Ingrese un número: ");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            if (numero < 1)
+            {
+                Console.WriteLine("No se puede, el número debe ser mayor o igual a 1.");
+            }
+            else
+            {
+                Console.WriteLine($"Números impares desde 1 hasta {numero}:");
+
+                for (int i = 1; i < numero; i++)
+                {
+                    if (i % 2 != 0)
+                    {
+                        Console.WriteLine(i);
+                    }
+                }
+            }
+        }
+        static void ContarLetra()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine().ToLower();
+
+            Console.Write("Ingrese una letra: ");
+            string letra = Console.ReadLine().ToLower();
+
+            int contador = 0;
+
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                if (palabra[i].ToString() == letra)
+                {
+                    contador++;
+                }
+            }
+
+            Console.WriteLine($"La letra '{letra}' aparece {contador} veces en la palabra '{palabra}'.");
+        }
+        static void CuentaBancaria()
+        {
+            int saldo = 1000;
+            string opcion;
+
+            Console.WriteLine("Bienvenido a tu cuenta bancaria.");
+            Console.WriteLine("Saldo inicial: $1000");
+
+            do
+            {
+                Console.WriteLine("Opciones: depositar, retirar, salir");
+                Console.Write("Ingrese una opción: ");
+                opcion = Console.ReadLine().ToLower();
+
+                if (opcion == "depositar")
+                {
+                    Console.Write("Ingrese el monto a depositar: ");
+                    int monto = Convert.ToInt32(Console.ReadLine());
+                    saldo += monto;
+                    Console.WriteLine($"Depósito realizado. Saldo actual: ${saldo}");
+                }
+                else if (opcion == "retirar")
+                {
+                    Console.Write("Ingrese el monto a retirar: ");
+                    int monto = Convert.ToInt32(Console.ReadLine());
+
+                    if (monto <= saldo)
+                    {
+                        saldo -= monto;
+                        Console.WriteLine($"Retiro realizado. Saldo actual: ${saldo}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No puede retirar más de lo que tiene.");
+                    }
+                }
+                else if (opcion != "salir")
+                {
+                    Console.WriteLine("Opción inválida. Intente nuevamente.");
+                }
+
+            } while (opcion != "salir");
+
+            Console.WriteLine($"Operación finalizada. Saldo final: ${saldo}");
+        }
+        static void Divisibles2o5()
+        {
+            int contador = 0;
+            int numero = 1;
+
+            Console.Write("Primeros 50 números divisibles por 2 o por 5, pero no por ambos:");
+
+            while (contador < 50)
+            {
+                bool divisiblePor2 = numero % 2 == 0;
+                bool divisiblePor5 = numero % 5 == 0;
+                if ((divisiblePor2 && !divisiblePor5) || (!divisiblePor2 && divisiblePor5))
+                {
+                    Console.Write($" -{numero}-");
+                    contador++;
+                }
+
+                numero++;
+            }
+        }
+        static void PosicionesAbecedario()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine().ToUpper();
+
+            Console.WriteLine("Posiciones en el abecedario:");
+
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                char letra = palabra[i];
+
+                // Solo letras A-Z
+                if (letra >= 'A' && letra <= 'Z')
+                {
+                    int posicion = letra - 'A' + 1;
+                    Console.WriteLine($"{letra} = {posicion}");
+                }
+                else
+                {
+                    Console.WriteLine($"{letra} no es una letra válida.");
+                }
+            }
+        }
+        static void JuegoAdivinanza()
+        {
+            Random rnd = new Random();
+            int secreto = rnd.Next(1, 101); 
+            int intento;
+            int contador = 0;
+
+            Console.WriteLine("Adiviná el número secreto (entre 1 y 100):");
+
+            do
+            {
+                intento = Convert.ToInt32(Console.ReadLine());
+                contador++;
+
+                if (intento > secreto)
+                {
+                    Console.WriteLine("El número secreto es más chico.");
+                }
+                else if (intento < secreto)
+                {
+                    Console.WriteLine("El número secreto es más grande.");
+                }
+                else
+                {
+                    Console.WriteLine($"¡Acertaste! El número era {secreto}.");
+                    Console.WriteLine($"Lo lograste en {contador} intentos.");
+                }
+
+            } while (intento != secreto);
+        }
+
+        static void InvertirPalabras()
+        {
+            Console.Write("Ingrese una frase: ");
+            string frase = Console.ReadLine();
+            string[] palabras = frase.Split(' ');
+            string resultado = "";
+
+            for (int i = 0; i < palabras.Length; i++)
+            {
+                string invertida = "";
+                for (int j = palabras[i].Length - 1; j >= 0; j--)
+                {
+                    invertida += palabras[i][j];
+                }
+
+                resultado += invertida;
+
+                if (i < palabras.Length - 1)
+                {
+                    resultado += " ";
+                }
+            }
+
+            Console.WriteLine(resultado);
+        }
+
+        static void ContarLetras()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine().ToLower();
+
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                char letra = palabra[i];
+                bool repetida = false;
+
+                for (int k = 0; k < i; k++)
+                {
+                    if (palabra[k] == letra)
+                    {
+                        repetida = true;
+                        break;
+                    }
+                }
+
+                if (!repetida)
+                {
+                    int contador = 0;
+                    for (int j = 0; j < palabra.Length; j++)
+                    {
+                        if (palabra[j] == letra)
+                        {
+                            contador++;
+                        }
+                    }
+                    Console.WriteLine($"La letra '{letra}' aparece {contador} veces.");
+                }
+            }
+        }
+        static void SistemaIngreso()
+        {
+            string usuarioCorrecto = "Facundo";
+            string passCorrecta = "EmpanadaDeJyQ";
+            int intentos = 0;
+            bool acceso = false;
+
+            while (intentos < 3 && !acceso)
+            {
+                Console.Write("Ingrese usuario: ");
+                string usuario = Console.ReadLine();
+
+                Console.Write("Ingrese contraseña: ");
+                string pass = Console.ReadLine();
+
+                if (usuario == usuarioCorrecto && pass == passCorrecta)
+                {
+                    Console.WriteLine("Bienvenido Master!");
+                    acceso = true;
+                }
+                else
+                {
+                    Console.WriteLine("Usuario o contraseña incorrectos.");
+                    intentos++;
+                }
+            }
+
+            if (!acceso)
+            {
+                Console.WriteLine("Acceso bloqueado. Se acabaron los intentos.");
+            }
+        }
+        static void MostrarRango()
+        {
+            Console.Write("Ingrese un número: ");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            if (numero >= 0 && numero <= 25)
+            {
+                Console.WriteLine("El número está en el rango 0-25.");
+            }
+            else if (numero >= 26 && numero <= 50)
+            {
+                Console.WriteLine("El número está en el rango 26-50.");
+            }
+            else if (numero >= 51 && numero <= 75)
+            {
+                Console.WriteLine("El número está en el rango 51-75.");
+            }
+            else if (numero >= 76 && numero <= 100)
+            {
+                Console.WriteLine("El número está en el rango 76-100.");
+            }
+            else
+            {
+                Console.WriteLine("El número está fuera de rango.");
+            }
+        }
+        static void CalcularIMC()
+        {
+            Console.Write("Ingrese su peso en kg: ");
+            decimal peso = Convert.ToDecimal(Console.ReadLine());
+
+            Console.Write("Ingrese su altura en metros: ");
+            decimal altura = Convert.ToDecimal(Console.ReadLine());
+
+            decimal imc = peso / (altura * altura);
+            decimal imcRedondeado = Math.Round(imc, 2);
+
+            Console.WriteLine($"Su IMC es: {imcRedondeado}");
+
+            if (imc < 18.5m)
+            {
+                Console.WriteLine("Categoría: Bajo peso");
+            }
+            else if (imc >= 18.5m && imc < 25m)
+            {
+                Console.WriteLine("Categoría: Normal");
+            }
+            else if (imc >= 25m && imc < 30m)
+            {
+                Console.WriteLine("Categoría: Sobrepeso");
+            }
+            else
+            {
+                Console.WriteLine("Categoría: Obesidad");
+            }
+        }
+        static void PiramidePalabra()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine();
+
+            for (int i = 1; i <= palabra.Length; i++)
+            {
+                Console.WriteLine(palabra.Substring(0, i));
+            }
+        }
+
+        static void ReemplazarVocales()
+        {
+            string entrada = "";
+
+            while (entrada != "agusfortnite2008")
+            {
+                Console.Write("Ingrese una frase: ");
+                entrada = Console.ReadLine();
+
+                if (entrada == "agusfortnite2008")
+                    break;
+
+                string vocales = "aeiou";
+
+                for (int v = 0; v < vocales.Length; v++)
+                {
+                    string frase = entrada;
+                    for (int i = 0; i < frase.Length; i++)
+                    {
+                        if ("aeiouAEIOU".Contains(frase[i]))
+                        {
+                            frase = frase.Replace(frase[i], vocales[v]);
+                        }
+                    }
+                    Console.WriteLine(frase);
+                }
+            }
+        }
+
+
+
+
+    }
+}
