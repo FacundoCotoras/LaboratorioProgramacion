@@ -1,73 +1,179 @@
 using System;
+using System.Linq;
 namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            ////////////////////////////////////////
-            ////////////////Bloque 1////////////////
-            ////////////////////////////////////////
+            int opcionBloque = -1;
 
-              Multiplos3();
-              MayorEdad();
-              LetrasPalabra();
-              Contraseña();
-              NumeroMayor(); 
-              Saludo();
-              Tabla7();
-              CuentaRegresiva(); 
-              NumeroParImpar();
-              Vocales(); 
-              Tabla12();
-              TotalAcumulado();
-              Letras();
-              Edad();  
-              CincuentaACero();
-              AccesoPermitido(); 
-              NombreLargo();
-              LetrasA(); 
-  
-            ////////////////////////////////////////
-            ////////////////Bloque 2////////////////
-            ////////////////////////////////////////
-             Azar();
-             Divisores();
-             Fibonacci();
-             Calculadora();
-             Factorial();
-             Turnos();
-             Pares(); 
-             Termometro();
-             Primo();
-             Saludos();  
-             SistemaNombres();
-             NumerosMultiplo7TerminadosEn3();
-             CargarPrecios();
-             Formulario();
-             MostrarDigitos();
-             PiedraPapelTijera(); 
-             NumerosAleatorios(); 
-             NotasAlumnos();
-             AbecedarioInverso();
+            while (opcionBloque != 0)
+            {
+                Console.WriteLine("\n===== MENÚ PRINCIPAL =====");
+                Console.WriteLine("1 - Bloque 1");
+                Console.WriteLine("2 - Bloque 2");
+                Console.WriteLine("3 - Bloque 3");
+                Console.WriteLine("0 - Salir");
+                Console.Write("Seleccione un bloque: ");
+                opcionBloque = Convert.ToInt32(Console.ReadLine());
 
-             ////////////////////////////////////////
-             ////////////////Bloque 3////////////////
-             ////////////////////////////////////////
-             Votacion();
-             NumerosImpares();
-             ContarLetra();
-             CuentaBancaria();
-             Divisibles2o5(); 
-             PosicionesAbecedario();
-             JuegoAdivinanza();   
-             InvertirPalabras();
-             ContarLetras();
-             SistemaIngreso();  
-             MostrarRango();
-             CalcularIMC(); 
-             PiramidePalabra();
-             ReemplazarVocales();
+                if (opcionBloque == 1) MenuBloque1();
+                else if (opcionBloque == 2) MenuBloque2();
+                else if (opcionBloque == 3) MenuBloque3();
+                else if (opcionBloque == 0) Console.WriteLine("Saliendo...");
+                else Console.WriteLine("Opción inválida.");
+            }
+        }
+
+        // ================= BLOQUE 1 =================
+        static void MenuBloque1()
+        {
+            int opcion = -1;
+            while (opcion != 0)
+            {
+                Console.WriteLine("\n--- BLOQUE 1 ---");
+                Console.WriteLine("1 - Multiplos3");
+                Console.WriteLine("2 - MayorEdad");
+                Console.WriteLine("3 - LetrasPalabra");
+                Console.WriteLine("4 - Contraseña");
+                Console.WriteLine("5 - NumeroMayor");
+                Console.WriteLine("6 - Saludo");
+                Console.WriteLine("7 - Tabla7");
+                Console.WriteLine("8 - CuentaRegresiva");
+                Console.WriteLine("9 - NumeroParImpar");
+                Console.WriteLine("10 - Vocales");
+                Console.WriteLine("11 - Tabla12");
+                Console.WriteLine("12 - TotalAcumulado");
+                Console.WriteLine("13 - Letras");
+                Console.WriteLine("14 - Edad");
+                Console.WriteLine("15 - CincuentaACero");
+                Console.WriteLine("16 - AccesoPermitido");
+                Console.WriteLine("17 - NombreLargo");
+                Console.WriteLine("18 - LetrasA");
+                Console.WriteLine("0 - Volver");
+                Console.Write("Seleccione un ejercicio: ");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                if (opcion == 1) Multiplos3();
+                else if (opcion == 2) MayorEdad();
+                else if (opcion == 3) LetrasPalabra();
+                else if (opcion == 4) Contraseña();
+                else if (opcion == 5) NumeroMayor();
+                else if (opcion == 6) Saludo();
+                else if (opcion == 7) Tabla7();
+                else if (opcion == 8) CuentaRegresiva();
+                else if (opcion == 9) NumeroParImpar();
+                else if (opcion == 10) Vocales();
+                else if (opcion == 11) Tabla12();
+                else if (opcion == 12) TotalAcumulado();
+                else if (opcion == 13) Letras();
+                else if (opcion == 14) Edad();
+                else if (opcion == 15) CincuentaACero();
+                else if (opcion == 16) AccesoPermitido();
+                else if (opcion == 17) NombreLargo();
+                else if (opcion == 18) LetrasA();
+                else if (opcion == 0) Console.WriteLine("Volviendo...");
+                else Console.WriteLine("Opción inválida.");
+            }
+        }
+
+        // ================= BLOQUE 2 =================
+        static void MenuBloque2()
+        {
+            int opcion = -1;
+            while (opcion != 0)
+            {
+                Console.WriteLine("\n--- BLOQUE 2 ---");
+                Console.WriteLine("1 - Azar");
+                Console.WriteLine("2 - Divisores");
+                Console.WriteLine("3 - Fibonacci");
+                Console.WriteLine("4 - Calculadora");
+                Console.WriteLine("5 - Factorial");
+                Console.WriteLine("6 - Turnos");
+                Console.WriteLine("7 - Pares");
+                Console.WriteLine("8 - Termometro");
+                Console.WriteLine("9 - Primo");
+                Console.WriteLine("10 - Saludos");
+                Console.WriteLine("11 - SistemaNombres");
+                Console.WriteLine("12 - NumerosMultiplo7TerminadosEn3");
+                Console.WriteLine("13 - CargarPrecios");
+                Console.WriteLine("14 - Formulario");
+                Console.WriteLine("15 - MostrarDigitos");
+                Console.WriteLine("16 - PiedraPapelTijera");
+                Console.WriteLine("17 - NumerosAleatorios");
+                Console.WriteLine("18 - NotasAlumnos");
+                Console.WriteLine("19 - AbecedarioInverso");
+                Console.WriteLine("0 - Volver");
+                Console.Write("Seleccione un ejercicio: ");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                if (opcion == 1) Azar();
+                else if (opcion == 2) Divisores();
+                else if (opcion == 3) Fibonacci();
+                else if (opcion == 4) Calculadora();
+                else if (opcion == 5) Factorial();
+                else if (opcion == 6) Turnos();
+                else if (opcion == 7) Pares();
+                else if (opcion == 8) Termometro();
+                else if (opcion == 9) Primo();
+                else if (opcion == 10) Saludos();
+                else if (opcion == 11) SistemaNombres();
+                else if (opcion == 12) NumerosMultiplo7TerminadosEn3();
+                else if (opcion == 13) CargarPrecios();
+                else if (opcion == 14) Formulario();
+                else if (opcion == 15) MostrarDigitos();
+                else if (opcion == 16) PiedraPapelTijera();
+                else if (opcion == 17) NumerosAleatorios();
+                else if (opcion == 18) NotasAlumnos();
+                else if (opcion == 19) AbecedarioInverso();
+                else if (opcion == 0) Console.WriteLine("Volviendo...");
+                else Console.WriteLine("Opción inválida.");
+            }
+        }
+
+        // ================= BLOQUE 3 =================
+        static void MenuBloque3()
+        {
+            int opcion = -1;
+            while (opcion != 0)
+            {
+                Console.WriteLine("\n--- BLOQUE 3 ---");
+                Console.WriteLine("1 - Votacion");
+                Console.WriteLine("2 - NumerosImpares");
+                Console.WriteLine("3 - ContarLetra");
+                Console.WriteLine("4 - CuentaBancaria");
+                Console.WriteLine("5 - Divisibles2o5");
+                Console.WriteLine("6 - PosicionesAbecedario");
+                Console.WriteLine("7 - JuegoAdivinanza");
+                Console.WriteLine("8 - InvertirPalabras");
+                Console.WriteLine("9 - ContarLetras");
+                Console.WriteLine("10 - SistemaIngreso");
+                Console.WriteLine("11 - MostrarRango");
+                Console.WriteLine("12 - CalcularIMC");
+                Console.WriteLine("13 - PiramidePalabra");
+                Console.WriteLine("14 - ReemplazarVocales");
+                Console.WriteLine("0 - Volver");
+                Console.Write("Seleccione un ejercicio: ");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                if (opcion == 1) Votacion();
+                else if (opcion == 2) NumerosImpares();
+                else if (opcion == 3) ContarLetra();
+                else if (opcion == 4) CuentaBancaria();
+                else if (opcion == 5) Divisibles2o5();
+                else if (opcion == 6) PosicionesAbecedario();
+                else if (opcion == 7) JuegoAdivinanza();
+                else if (opcion == 8) InvertirPalabras();
+                else if (opcion == 9) ContarLetras();
+                else if (opcion == 10) SistemaIngreso();
+                else if (opcion == 11) MostrarRango();
+                else if (opcion == 12) CalcularIMC();
+                else if (opcion == 13) PiramidePalabra();
+                else if (opcion == 14) ReemplazarVocales();
+                else if (opcion == 0) Console.WriteLine("Volviendo...");
+                else Console.WriteLine("Opción inválida.");
+            }
         }
 
 
@@ -480,9 +586,9 @@ namespace ConsoleApp1
         }
         static void Termometro()
         {
-             string opcion;
+            string opcion;
 
-        Console.WriteLine("Conversor de Celsius a Fahrenheit");
+            Console.WriteLine("Conversor de Celsius a Fahrenheit");
             Console.WriteLine("Escriba 'salir' para terminar.");
 
             do
@@ -495,10 +601,10 @@ namespace ConsoleApp1
                     int celsius = Convert.ToInt16(opcion);
                     int fahrenheit = (celsius * 9 / 5) + 32;
 
-                     Console.WriteLine($"{celsius} °C equivalen a {fahrenheit} °F");
+                    Console.WriteLine($"{celsius} °C equivalen a {fahrenheit} °F");
                 }
 
-            } while (opcion != "salir") ;
+            } while (opcion != "salir");
 
             Console.WriteLine("Programa finalizado.");
 
@@ -576,7 +682,7 @@ namespace ConsoleApp1
             {
                 string nombre = Console.ReadLine();
 
-              
+
                 for (int i = 0; i < cantidad; i++)
                 {
                     if (nombres[i].ToLower() == nombre.ToLower())
@@ -676,15 +782,15 @@ namespace ConsoleApp1
 
         static void MostrarDigitos()
         {
-           Console.Write("Ingrese un número: ");
-           string numero = Console.ReadLine();
+            Console.Write("Ingrese un número: ");
+            string numero = Console.ReadLine();
 
-           Console.WriteLine("Los dígitos son:");
+            Console.WriteLine("Los dígitos son:");
 
-           for (int i = 0; i < numero.Length; i++)
-           {
-             Console.WriteLine(numero[i]);
-           }
+            for (int i = 0; i < numero.Length; i++)
+            {
+                Console.WriteLine(numero[i]);
+            }
         }
         static void PiedraPapelTijera()
         {
@@ -986,7 +1092,7 @@ namespace ConsoleApp1
         static void JuegoAdivinanza()
         {
             Random rnd = new Random();
-            int secreto = rnd.Next(1, 101); 
+            int secreto = rnd.Next(1, 101);
             int intento;
             int contador = 0;
 
