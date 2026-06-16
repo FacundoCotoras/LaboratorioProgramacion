@@ -1,0 +1,417 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int opcion = -1;
+            while (opcion != 0)
+            {
+                Console.WriteLine("=====MENU=====");
+                Console.WriteLine("1 - LongitudCadena");
+                Console.WriteLine("2 - ConversionTexto");
+                Console.WriteLine("3 - ContadorVocales");
+                Console.WriteLine("4 - PrimerYUltimaLetra");
+                Console.WriteLine("5 - DivisionSegura");
+                Console.WriteLine("6 - AccesoCadena");
+                Console.WriteLine("7 - BusquedaPalabras");
+                Console.WriteLine("8 - SumaNumerosComas");
+                Console.WriteLine("9 - InvertirTexto");
+                Console.WriteLine("10 - Contrasenia");
+                Console.WriteLine("11 - ValidarEdad");
+                Console.WriteLine("12 - UsoNull");
+                Console.WriteLine("13 - Overflow");
+                Console.WriteLine("14 - AnalisisTexto");
+                Console.WriteLine("0 - SALIR");
+
+
+
+                Console.Write("Seleccione un algoritmo:");
+                opcion = Convert.ToInt16(Console.ReadLine());
+                if (opcion == 1)
+                {
+                    LongitudCadena();
+                }
+                else if (opcion == 2)
+                {
+                    ConversionTexto();
+                }
+                else if (opcion == 3)
+                {
+                    ContadorVocales();
+                }
+                else if (opcion == 4)
+                {
+                    PrimerYUltimaLetra();
+                }
+                else if (opcion == 5)
+                {
+                    DivisionSegura();
+                }
+                else if (opcion == 6)
+                {
+                    AccesoCadena();
+                }
+                else if (opcion == 7)
+                {
+                    BusquedaPalabras();
+                }
+                else if (opcion == 8)
+                {
+                    SumaNumerosComas();
+                }
+                else if (opcion == 9)
+                {
+                    InvertirTexto();               
+                }
+                else if(opcion == 10)
+                {
+                    Contrasenia();
+                }
+                else if (opcion == 11)
+                {
+                    ValidarEdad();
+                }
+                else if (opcion == 12)
+                {
+                    UsoNull();
+                }
+                else if (opcion == 13)
+                {
+                    Overflow();
+                }
+                else if (opcion == 14)
+                {
+                    AnalisisTexto();
+                }
+                else if (opcion == 0)
+                {
+                    Console.WriteLine("Chau");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Opcion no valida");
+                }
+            }
+
+        }
+        static void LongitudCadena()
+        {
+            Console.Write("Ingrese una frase: ");
+            string frase = Console.ReadLine();
+            int CantidadCaracteres = frase.Length;
+            Console.WriteLine($"La frase tiene {CantidadCaracteres} caracteres.");
+        }
+        static void ConversionTexto()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string Palabra = Console.ReadLine();
+            string PalabraMayuscula = Palabra.ToUpper();
+            string PalabraMinuscula = Palabra.ToLower();
+            int CantidadCaracteres = Palabra.Length;
+            Console.WriteLine($"La palabra en mayuscula es: {PalabraMayuscula}");
+            Console.WriteLine($"La palabra en minuscula es: {PalabraMinuscula}");
+            Console.WriteLine($"La cantidad de letras es: {CantidadCaracteres}");
+
+        }
+        static void ContadorVocales()
+        {
+            Console.Write("Ingrese una frase: ");
+            string Frase = Console.ReadLine();
+            int Contador = 0;
+            for (int i = 0; i < Frase.Length; i++)
+            {
+                char Letra = Frase[i];
+                if ("aeiouAEIOU".Contains(Letra.ToString()))
+                {
+                    Contador++;
+                }
+            }
+            Console.WriteLine($"La frase tiene {Contador} vocales.");
+        }
+        static void PrimerYUltimaLetra()
+        {
+            try
+            {
+                Console.WriteLine("Ingrese una palabra: ");
+                string Palabra = Console.ReadLine();
+                char Primera = Palabra[0];
+                char Ultima = Palabra[Palabra.Length - 1];
+                Console.WriteLine($"Primera letra: {Primera}");
+                Console.WriteLine($"Ultima letra: {Ultima}");
+            }
+            catch
+            {
+                Console.WriteLine("ERROR: La palabra no puede estar vacía.");
+            }
+        }
+        static void DivisionSegura()
+        {
+            try
+            {
+                Console.Write("Ingrese el primer número entero: ");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Ingrese el segundo número entero: ");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+
+                int resultado = num1 / num2;
+
+                Console.WriteLine($"El resultado de la división es: {resultado}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Debe ingresar un número entero válido.");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: No se puede dividir por cero.");
+            }
+        }
+        static void AccesoCadena()
+        {
+            try
+            {
+                Console.Write("Ingrese una palabra: ");
+                string palabra = Console.ReadLine();
+
+                Console.Write("Ingrese la posición: ");
+                int posicion = Convert.ToInt32(Console.ReadLine());
+
+                char caracter = palabra[posicion];
+
+                Console.WriteLine($"El carácter en la posición {posicion} es: {caracter}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Debe ingresar un número entero válido para la posición.");
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("Error: La posición ingresada está fuera del rango de la palabra.");
+            }
+        }
+        static void BusquedaPalabras()
+        {
+            Console.Write("Ingrese una frase: ");
+            string frase = Console.ReadLine();
+
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine();
+
+            if (frase.Contains(palabra))
+            {
+                Console.WriteLine($"La palabra '{palabra}' se encuentra dentro de la frase.");
+            }
+            else
+            {
+                Console.WriteLine($"La palabra '{palabra}' NO se encuentra dentro de la frase.");
+            }
+        }
+        static void SumaNumerosComas()
+        {
+            try
+            {
+                Console.Write("Ingrese números separados por comas: ");
+                string entrada = Console.ReadLine();
+
+                string[] partes = entrada.Split(',');
+
+                int suma = 0;
+
+                for (int i = 0; i < partes.Length; i++)
+                {
+                    int numero = Convert.ToInt32(partes[i]);
+                    suma += numero;
+                }
+
+                Console.WriteLine($"La suma total es: {suma}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: La cadena contiene valores que no son números enteros.");
+            }
+        }
+        static void InvertirTexto()
+        {
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine();
+
+            string invertida = "";
+
+            for (int i = palabra.Length - 1; i >= 0; i--)
+            {
+                invertida += palabra[i];
+            }
+
+            Console.WriteLine($"Palabra invertida: {invertida}");
+        }
+        static void Contrasenia()
+        {
+            Console.Write("Ingrese una contraseña: ");
+            string contraseña = Console.ReadLine();
+
+            if (contraseña.Length < 8)
+            {
+                Console.WriteLine("Error: La contraseña debe tener al menos 8 caracteres.");
+            }
+            else
+            {
+                bool tieneNumero = false;
+
+                for (int i = 0; i < contraseña.Length; i++)
+                {
+                    if (contraseña[i] >= '0' && contraseña[i] <= '9')
+                    {
+                        tieneNumero = true;
+                        break;
+                    }
+                }
+
+                if (!tieneNumero)
+                {
+                    Console.WriteLine("Error: La contraseña debe contener al menos un número.");
+                }
+                else
+                {
+                    Console.WriteLine("Contraseña válida.");
+                }
+            }
+        }
+        static void ValidarEdad()
+        {
+            try
+            {
+                Console.Write("Ingrese una edad: ");
+                int edad = Convert.ToInt32(Console.ReadLine());
+
+                if (edad < 1 || edad > 120)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                Console.WriteLine("Edad válida.");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("La edad debe estar entre 1 y 120.");
+            }
+        }
+        static void UsoNull()
+        {
+            try
+            {
+                string texto = null;
+
+                int longitud = texto.Length;
+
+                Console.WriteLine($"La longitud del texto es: {longitud}");
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Error: Se intentó acceder a un objeto nulo (NullReferenceException).");
+            }
+        }
+        static void Overflow()
+        {
+            try
+            {
+                Console.Write("Ingrese el primer número entero grande: ");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Ingrese el segundo número entero grande: ");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+
+                int resultado = checked(num1 + num2);
+
+                Console.WriteLine($"Resultado de la suma: {resultado}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Debe ingresar un número entero válido.");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Error: Se produjo un desbordamiento aritmético (OverflowException).");
+            }
+        }
+        static void AnalisisTexto()
+        {
+            try
+            {
+                Console.Write("Ingrese una frase: ");
+                string frase = Console.ReadLine();
+
+                Console.WriteLine($"Cantidad de caracteres: {frase.Length}");
+
+                string[] partes = frase.Split(' ');
+                int cantidadPalabras = 0;
+                for (int i = 0; i < partes.Length; i++)
+                {
+                    if (partes[i] != "")
+                    {
+                        cantidadPalabras++;
+                    }
+                }
+                Console.WriteLine($"Cantidad de palabras: {cantidadPalabras}");
+
+                int vocales = 0;
+                for (int i = 0; i < frase.Length; i++)
+                {
+                    char c = frase[i];
+                    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                        c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+                    {
+                        vocales++;
+                    }
+                }
+                Console.WriteLine($"Cantidad de vocales: {vocales}");
+
+                Console.Write("Ingrese una posición: ");
+                int pos = Convert.ToInt32(Console.ReadLine());
+
+                if (pos < 0 || pos >= frase.Length)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+                Console.WriteLine($"El carácter en la posición {pos} es: {frase[pos]}");
+
+                Console.Write("Ingrese un número para dividir 100: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                if (num == 0)
+                {
+                    throw new DivideByZeroException();
+                }
+
+                if (num < 0)
+                {
+                    throw new ArgumentException("El número no puede ser negativo.");
+                }
+
+                int resultado = 100 / num;
+                Console.WriteLine($"Resultado de la división: {resultado}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Debe ingresar un número entero válido.");
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("Error: La posición ingresada está fuera del rango de la frase.");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: No se puede dividir por cero.");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+    }
+}
