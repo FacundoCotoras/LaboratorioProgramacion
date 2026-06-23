@@ -1,0 +1,24 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] peliculas = new string[5];
+
+            for (int i = 0; i < peliculas.Length; i++)
+            {
+                Console.Write("Ingrese el nombre de una película favorita: ");
+                peliculas[i] = Console.ReadLine();
+            }
+
+            Console.WriteLine("Tus películas favoritas son:");
+            foreach (string peli in peliculas)
+            {
+                Console.WriteLine(peli);
+            }
+        }
+
+    }
+}

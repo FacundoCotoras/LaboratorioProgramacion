@@ -1,0 +1,27 @@
+using System;
+namespace ConsoleApp6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] colores = { "Rojo", "Verde", "Azul", "Amarillo", "Negro" };
+
+            Console.Write("Ingrese un índice (0 a 4): ");
+            int indiceEliminar = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = indiceEliminar; i < colores.Length - 1; i++)
+            {
+                colores[i] = colores[i + 1];
+            }
+
+            colores[colores.Length - 1] = "";
+
+            Console.WriteLine("Arreglo actualizado:");
+            foreach (string c in colores)
+            {
+                Console.WriteLine(c);
+            }
+        }
+    }
+}

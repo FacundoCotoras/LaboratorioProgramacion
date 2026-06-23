@@ -1,0 +1,32 @@
+using System;
+namespace ConsoleApp6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] notas = new double[5];
+            double suma = 0;
+
+            for (int i = 0; i < notas.Length; i++)
+            {
+                Console.Write($"Ingrese la nota {i + 1}: ");
+                notas[i] = Convert.ToDouble(Console.ReadLine());
+                suma += notas[i];
+            }
+
+            double promedio = (double)suma / notas.Length;
+
+            Console.WriteLine("Promedio: " + promedio);
+
+            if (promedio >= 6)
+            {
+                Console.WriteLine("Aprobado");
+            }
+            else
+            {
+                Console.WriteLine("Desaprobado");
+            }
+        }
+    }
+}

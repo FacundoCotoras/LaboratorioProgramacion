@@ -1,0 +1,27 @@
+using System;
+namespace ConsoleApp6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numeros = { 10, 20, 30, 40, 50, 0 };
+
+            Console.Write("Ingrese un nuevo número: ");
+            int nuevo = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = numeros.Length - 1; i > 2; i--)
+            {
+                numeros[i] = numeros[i - 1];
+            }
+
+            numeros[2] = nuevo;
+
+            Console.WriteLine("Arreglo resultante:");
+            foreach (int n in numeros)
+            {
+                Console.WriteLine(n);
+            }
+        }
+    }
+}
