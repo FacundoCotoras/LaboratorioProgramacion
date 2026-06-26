@@ -1,0 +1,43 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double horas = 0;
+
+            
+            Console.WriteLine("Ingrese las horas");
+            horas = Convert.ToDouble(Console.ReadLine());
+            
+
+            
+            Console.WriteLine($"Ingrese su Categoria: ");
+            string cat = Console.ReadLine();
+            cat = cat.ToUpper();
+            if (cat == "A") 
+            {
+                double sueldo = horas * 200;
+                Console.WriteLine($"El sueldo es de: {sueldo}");
+            }
+            else if (cat == "B")
+            {
+                double sueldo = horas * 180;
+                Console.WriteLine($"El sueldo es de: {sueldo}");
+            }
+            else if (cat == "C")
+            {
+                double sueldo = horas * 150;
+                Console.WriteLine($"El sueldo es de: {sueldo}");
+            }
+            else
+            {
+                double sueldo = horas * 0;
+                Console.WriteLine($"El sueldo es de: {sueldo}");
+            }
+
+        } 
+    }
+}

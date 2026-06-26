@@ -1,0 +1,33 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese un Numero: ");
+            int Num1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ingrese otro Numero: ");
+            int Num2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ingrese otro Numero: ");
+            int Num3 = Convert.ToInt32(Console.ReadLine());
+            if (Num1 == Num2 && Num1 == Num3)
+            {
+                Console.WriteLine("Los 3 numeros son iguales");
+            }
+            else if(Num1 == Num2)
+            {
+                Console.WriteLine($"El primer numero y el segundo numero son iguales");
+            }
+            else if(Num2 == Num3)
+            {
+                Console.WriteLine($"El segundo numero y el tercer numero son iguales");
+            }
+            else
+            {
+                Console.WriteLine("Los 3 numeros son distintos");
+            }
+        }
+    }
+}

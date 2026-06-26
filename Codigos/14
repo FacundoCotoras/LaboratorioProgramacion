@@ -1,0 +1,27 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese un Numero: ");
+            int Num1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ingrese otro Numero: ");
+            int Num2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ingrese otro Numero: ");
+            int Num3 = Convert.ToInt32(Console.ReadLine());
+            if (Num1 <= Num2 && Num2 <= Num3)
+            {
+                Console.WriteLine("Los numeros estan ordenados de forma ascendente");
+            }
+            else
+            {
+                Console.WriteLine("Los numeros no estan ordenados de forma ascendente");
+            }
+            
+        }
+    }
+}
+

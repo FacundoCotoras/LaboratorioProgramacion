@@ -1,0 +1,35 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese una hora: ");
+            int hora = Convert.ToInt32(Console.ReadLine);
+            Console.Write("Ingrese un minuto: ");
+            int minuto = Convert.ToInt32(Console.ReadLine);
+            Console.Write("Ingrese un segundo: ");
+            int segundo = Convert.ToInt32(Console.ReadLine);
+            Console.Write("Ingrese un numero entre 1 y 3: ");
+            int x = Convert.ToInt32(Console.ReadLine);
+
+            if (x == 1)
+            {
+                segundo = hora * 3600 + minuto * 60 + segundo;
+            }
+            else if (x == 2)
+            {
+                minuto = hora * 60 + minuto + segundo / 60;
+            }
+            else
+            {
+                hora = hora + minuto / 60 + segundo / 3600;
+            }
+
+        }
+    }
+}
+
+

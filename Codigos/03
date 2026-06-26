@@ -1,0 +1,15 @@
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese la cantidad de Fuerza en Newtons: ");
+            double Fuerza = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Ingrese el Area en M²: ");
+            double Area = Convert.ToInt16(Console.ReadLine());
+            double Presion = Fuerza / Area;
+            Console.WriteLine($"La presion es de: {Presion} Pascales");
+        } 
+    }
+}

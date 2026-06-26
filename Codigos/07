@@ -1,0 +1,49 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double horas = 0;
+            do
+            {
+                Console.WriteLine("Ingrese las horas(Minimo 20hs)");
+                horas = Convert.ToDouble(Console.ReadLine());
+            }
+            while(horas < 20);
+            double costo = horas * 50;
+            Console.WriteLine($"Ingrese su Edad: ");
+            int Edad = Convert.ToInt32(Console.ReadLine());
+            if(Edad > 70) 
+            {
+                costo = costo * 0.50;
+                double impuestos = costo * 1.33;
+                Console.WriteLine($"El valor final seria: {impuestos}");
+                Console.WriteLine($"El valor final sin impuestos seria de: {costo}");
+            }
+            else if (Edad > 60)
+            {
+                costo = costo * 0.70;
+                double impuestos = costo * 1.33;
+                Console.WriteLine($"El valor final seria: {impuestos}");
+                Console.WriteLine($"El valor final sin impuestos seria de: {costo}");
+            }
+            else if (Edad > 50)
+            {
+                costo = costo * 0.80;
+                double impuestos = costo * 1.33;
+                Console.WriteLine($"El valor final seria: {impuestos}");
+                Console.WriteLine($"El valor final sin impuestos seria de: {costo}");
+            }
+            else
+            {
+                double impuestos = costo * 1.33;
+                Console.WriteLine($"El valor final seria: {impuestos}");
+                Console.WriteLine($"El valor final sin impuestos seria de: {costo}");
+            }
+
+        } 
+    }
+}

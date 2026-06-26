@@ -1,0 +1,20 @@
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese la medida del ancho del rectangulo: ");
+            double ancho = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ingrese la medida del Alto del rectangulo: ");
+            double Alto = Convert.ToDouble(Console.ReadLine());
+            double perimetro = 2 * ancho + 2 * Alto;
+            double Area = ancho  * Alto;
+            Console.WriteLine($"El Perimetro es: {perimetro}");
+            Console.WriteLine($"El Area es: {Area}");
+            
+        }
+
+        
+    }
+}

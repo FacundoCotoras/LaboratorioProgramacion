@@ -1,0 +1,19 @@
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese la cantidad de hombres que hay: ");
+            int CantH = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Ingrese la cantidad de mujeres que hay: ");
+            int CantM = Convert.ToInt16(Console.ReadLine());
+            int Total = CantH + CantM;
+            double PH = CantH * 100 / Total;
+            double PM = CantM * 100 / Total;
+            Console.WriteLine($"El porcentaje de Hombres es: {PH}");
+            Console.WriteLine($"El porcentaje de Mujeres es: {PM}");
+
+        } 
+    }
+}

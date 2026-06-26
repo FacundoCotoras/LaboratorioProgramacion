@@ -1,0 +1,13 @@
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un Valor");
+            double valor = Convert.ToDouble(Console.ReadLine());
+            double resultado = valor / 8;
+            Console.WriteLine($"La Octava parte de {valor} es de: {resultado}");
+        } 
+    }
+}

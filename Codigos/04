@@ -1,0 +1,23 @@
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] Resistencias = new double[5];
+            double suma = 0;
+            for (int i = 0; i < 5; i++) 
+            {
+                Console.WriteLine($"Ingrese el valor de la Resistencia {i + 1}: ");
+                Resistencias[i] = Convert.ToDouble(Console.ReadLine());
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"Resistencia {i + 1}: {Resistencias[i]}");
+                 suma = suma + Resistencias[i];
+            }
+            Console.WriteLine($"El valor total seria de: {suma}");
+
+        } 
+    }
+}

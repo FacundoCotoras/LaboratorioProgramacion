@@ -1,0 +1,39 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            
+            Console.WriteLine("Ingrese su Sueldo Basico");
+            double sueldo = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Ingrese su cantidad de hijos");
+            int  hijos = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine($"Ingrese su Categoria: ");
+            int cat = Convert.ToInt16(Console.ReadLine());
+            sueldo = sueldo + hijos * 300;
+            if (hijos > 4) 
+            {
+                sueldo = sueldo + 200;
+            }
+
+            if (cat == 1) 
+            {
+                 sueldo = sueldo * 1.10;
+            }
+            else if (cat == 2)
+            {
+                sueldo = sueldo * 1.20;
+                
+            }
+            Console.WriteLine($"El sueldo es de: {sueldo}");
+
+        } 
+    }
+}
