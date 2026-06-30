@@ -1,0 +1,30 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] promedios = new double[30];
+            double suma = 0;
+            double sumaC = 0;
+            double m = 0;
+            for (int i = 0; i < 30; i++)
+            {
+                suma = 0;
+                for (int x = 0; x < 10; x++) 
+                {
+                    
+                    Console.WriteLine($"Ingrese la nota {x+1}: ");
+                     m = Convert.ToDouble(Console.ReadLine());
+                     suma = suma + m;
+                }
+                promedios[i] = suma / 10;
+                Console.WriteLine($"El promedio del Alumno {i+1} es {promedios[i]}");
+                sumaC = sumaC + promedios[i];
+            }
+            Console.WriteLine($"El promedio del curso es {sumaC / 30}");
+        }
+    }
+}
