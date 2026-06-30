@@ -1,0 +1,28 @@
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] notas = new double[15];
+            string[] nombres = new string[15];
+
+            for(int i = 0; i < 15; i++)
+            {
+                Console.Write("Ingrese el nombre del alumno: ");
+                nombres[i] = Console.ReadLine();
+                Console.Write($"Ingrese la nota del alumno {nombres[i]}:  ");
+                notas[i] = Convert.ToDouble(Console.ReadLine());
+            }
+
+            for(int i = 0; i < 15; i++)
+            {
+                if (notas[i] < 8)
+                {
+                    Console.WriteLine($"Alumno: {nombres[i]} | Nota: {notas[i]}");
+                }
+            }
+        }
+    }
+}
