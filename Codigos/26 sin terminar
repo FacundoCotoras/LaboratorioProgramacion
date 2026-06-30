@@ -1,0 +1,38 @@
+
+using System.Runtime.Intrinsics.Arm;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int salir = 0;
+            
+            int cant = 0;
+            int p = 0;
+            Console.WriteLine("Ingrese la cantidad de facturas que ingresara: ");
+            p = Convert.ToInt16(Console.ReadLine());
+            int[] factura = new int[p];
+            int[] cantTo = new int[p];
+            int[] Codigo = new int[p];
+            for (int i = 0; i < p; i++)
+            {
+                Console.WriteLine("Ingrese el codigo del producto(999 para salir): ");
+                Codigo[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Ingrese el numero de factura: ");
+                factura[i] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ingrese la cantidad de productos comprados");
+                cant = Convert.ToInt16(Console.ReadLine());
+                cantTo[i] = cant;
+                for (int x = 0; x < cant; x++)
+                {
+                    Console.WriteLine($"Ingrese el precio del producto{i + 1}");
+                    double Precio = Convert.ToDouble(Console.ReadLine());
+                }
+            }
+
+
+        }
+    }
+}
