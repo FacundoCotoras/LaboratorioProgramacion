@@ -1,0 +1,44 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] TotalU = new int[20];
+            double Mayor = -999999;
+            double[] TotalG = new double[20];
+            int h = 0;
+            double aux = 0;
+            for (int i = 0; i < 20; i++)
+            {
+                for (int x = 0; x < 15; x++) 
+                {
+                    aux = 0;
+                    Console.WriteLine($"Vendedor {i+1}, Dia{x+1}: ");
+                    Console.Write("Ingrese la Cantidad de unidades vendidas: ");
+                    int Cant = Convert.ToInt32(Console.ReadLine());
+                    TotalU[i] = TotalU[i] + Cant;
+                    for (int y = 0; y < Cant; y++) 
+                    {
+                        Console.Write($"Ingrese el Valor de la Unidad {y + 1}: ");
+                        double valor = Convert.ToDouble(Console.ReadLine());
+                        TotalG[i] = TotalG[i] + valor;
+                        aux = aux  + valor;
+                    }
+                    if (aux > Mayor) 
+                    {
+                        Mayor = aux;
+                        h = i;
+                    }
+                }  
+            }
+            for (int i = 0; i < 20; i++) 
+            {
+                Console.WriteLine($"El vendedor {i + 1} tiene {TotalU[i]} ventas con un total de ${TotalG[i]} en valor");
+            }
+            Console.WriteLine($"El vendedor que mas vendio en un dia fue le vendedor {h + 1} con un valor de {Mayor}");
+        }
+    }
+}
