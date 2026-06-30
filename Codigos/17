@@ -1,0 +1,27 @@
+using System.ComponentModel.Design;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero1;
+            int numero2;
+
+            Console.Write("Ingrese el primer numero: ");
+            numero1 = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese el segundo numero: ");
+            numero2 = Convert.ToInt16(Console.ReadLine());
+
+            while (numero1 < numero2 - 1)
+            {
+                numero1 = numero1 + 1;
+                Console.WriteLine(numero1);
+            }
+           
+
+            
+        }
+    }
+}
