@@ -1,0 +1,27 @@
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese el Dia: ");
+            int dia = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese el Mes: ");
+            int mes = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Ingrese el Año: ");
+            int año = Convert.ToInt16(Console.ReadLine());
+            if (dia > 31 || mes > 12)
+            {
+                Console.WriteLine("--ERROR--");
+                Console.WriteLine("Selecciono un dia o un mes inexistente");
+
+            }
+            else
+            {
+                Console.WriteLine("Guardado");
+                Console.WriteLine($"Dia: {dia}, Mes {mes}, año {año}");
+            }
+        }
+    }
+}
