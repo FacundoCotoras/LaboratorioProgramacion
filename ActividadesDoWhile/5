@@ -1,0 +1,43 @@
+using System;
+using System.Threading.Channels;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int cant = 0;
+            double suma = 0;
+            double max = 0;
+            double min = 99999;
+            string x = "";
+            do
+            {
+                Console.WriteLine("Ingrese el alumno: ");
+                string alumno = Console.ReadLine();
+                Console.WriteLine("Ingrese la nota: ");
+                double nota = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Ingrese la edad: ");
+                int edad = Convert.ToInt16(Console.ReadLine());
+                cant = cant + 1;
+                suma = suma + nota;
+                if (nota > max)
+                    max = nota;
+                if (nota < min)
+                    min = nota;
+                do
+                {
+                    Console.WriteLine("Desea cnotinuar?: ");
+                    x = Console.ReadLine();
+                } while (x != "N" && x != "S");
+                if (x == "N")
+                    break;
+            }
+            while (true);
+            Console.WriteLine($"La cantidad de alumnos es de {cant}");
+            Console.WriteLine($"El promedio de nota es de {suma / cant}");
+            Console.WriteLine($"La nota maxima es de {max}");
+            Console.WriteLine($"La nota minima es de {min}");
+        }
+    }
+}
