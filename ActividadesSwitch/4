@@ -1,0 +1,32 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese metros: ");
+            double metros = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("1 - Centímetros 2 - Milímetros 3 - Kilómetros 4 - Pulgadas");
+            int opcion = Convert.ToInt16(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine($"{metros * 100}  cm");
+                    break;
+                case 2:
+                    Console.WriteLine($"{metros * 1000}  mm");
+                    break;
+                case 3:
+                    Console.WriteLine($"{metros / 1000}   km");
+                    break;
+                case 4:
+                    Console.WriteLine($"{metros * 39.37}  pulgadas"); 
+                    break;
+                default: 
+                    Console.WriteLine("Opción inválida");
+                    break;
+            }
+        }
+    }
+}
