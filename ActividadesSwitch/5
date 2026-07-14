@@ -1,0 +1,50 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double saldo = 100000;
+            int opcion;
+            do
+            {
+                Console.WriteLine("----- CAJERO -----");
+                Console.WriteLine("1 - Consultar saldo");
+                Console.WriteLine("2 - Depositar");
+                Console.WriteLine("3 - Extraer");
+                Console.WriteLine("4 - Salir");
+                opcion = Convert.ToInt16(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    case 1:
+                        Console.WriteLine($"Saldo: ${saldo}");
+                        break;
+                    case 2:
+                        Console.Write("Monto a depositar: ");
+                        double x = Convert.ToDouble(Console.ReadLine());
+                        saldo = saldo + x;
+                        Console.WriteLine($"Depósito realizado. Saldo: ${saldo}");
+                        break;
+                    case 3:
+                        Console.Write("Monto a extraer: ");
+                        double ext = Convert.ToDouble(Console.ReadLine());
+                        if (ext <= saldo)
+                        {
+                            saldo = saldo - ext;
+                            Console.WriteLine($"Extracción realizada. Saldo: ${saldo}");
+                        }
+                        else 
+                            Console.WriteLine("Saldo insuficiente.");
+                        break;
+                    case 4: 
+                        Console.WriteLine("Gracias."); 
+                        break;
+                    default: 
+                        Console.WriteLine("Opción inválida.");
+                        break;
+                }
+            } while (opcion != 4);
+        }
+    }
+}
