@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Cantidad de alumnos: ");
+            int cant = Convert.ToInt16(Console.ReadLine());
+            int i = 1;
+            int suma = 0;
+            while (i <= cant)
+            {
+                Console.Write($"Nota {i}: ");
+                int x = Convert.ToInt16(Console.ReadLine());
+                suma = x + suma;
+                i=i+1;
+            }
+            Console.WriteLine($"Suma: {suma}");
+            Console.WriteLine($"Promedio:  { suma / cant }");
+        }
+    }
+}
