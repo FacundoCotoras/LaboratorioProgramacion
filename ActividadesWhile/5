@@ -1,0 +1,38 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int opcion = 1;
+            while (opcion != 0)
+            {
+                Console.WriteLine("1 - saludar 2 - Mostrar la fecha 3 - Mostrar un mensaje 0 - salir");
+                opcion = Convert.ToInt16(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    case 1:
+                        Console.WriteLine($"Hello World!");
+                        break;
+                    case 2:
+                        Console.WriteLine($"14/7/2026 DC");
+                        break;
+                    case 3:
+                        Console.WriteLine($"Bienvenido al programa");
+                        break;
+                    case 0:
+                        Console.WriteLine("Adios");
+                        break;
+                    default:
+                        Console.WriteLine("Opción inválida");
+                        break;
+                }
+            }
+            
+        }
+
+    }
+}
