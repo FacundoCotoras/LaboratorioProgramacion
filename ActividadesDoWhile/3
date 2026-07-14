@@ -1,0 +1,34 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero;
+            
+            int suma = 0;
+            int i = 0;
+            do
+            {
+                string x = "";
+                Console.WriteLine("Ingrese un numero");
+                numero = Convert.ToInt16(Console.ReadLine());
+                suma = suma + numero;
+                i = i + 1;
+                do
+                {
+                    Console.WriteLine("Desea Continuar? (S/N)");
+                    x = Console.ReadLine();
+                    
+
+                } while (x != "N" && x != "S");
+                if (x == "N")
+                    break;
+
+            } while (true);
+            Console.WriteLine($"Suma Total {suma}");
+            Console.WriteLine($"Cantidad de numeros {i}");
+        }
+    }
+}
