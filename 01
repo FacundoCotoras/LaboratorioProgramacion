@@ -1,0 +1,25 @@
+class Program
+{
+    static void Main()
+    {
+        int[] resistencias = new int[5];
+        int total = 0;
+
+        for (int i = 0; i < resistencias.Length; i++)
+        {
+            Console.Write("Ingrese la resistencia " + (i + 1) + ": ");
+            resistencias[i] = int.Parse(Console.ReadLine());
+
+            total += resistencias[i];
+        }
+
+        Console.WriteLine("\nResistencias ingresadas:");
+
+        for (int i = 0; i < resistencias.Length; i++)
+        {
+            Console.WriteLine("Resistencia " + (i + 1) + ": " + resistencias[i]);
+        }
+
+        Console.WriteLine("\nResistencia total: " + total);
+    }
+}
