@@ -1,0 +1,27 @@
+using System;
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombre;
+            string x;
+            do
+            {
+                Console.WriteLine("Ingrese un nombre");
+                nombre = Console.ReadLine();
+                Console.WriteLine("Desea Ingresar otro nombre?(S/N)");
+                x = Console.ReadLine();
+                if (x == "N")
+                    break;
+                else if (x != "S" && x != "N")
+                {
+                    Console.WriteLine("Ingrese una opcion valida");
+                    break;
+                }
+            } while (true);
+            
+        }
+    }
+}
