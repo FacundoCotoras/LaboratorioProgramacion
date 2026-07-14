@@ -1,0 +1,37 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Primer número: ");
+            double a = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Segundo número: ");
+            double b = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("1 - Sumar 2 - Restar 3 - Multiplicar 4 - Dividir");
+            int opcion = Convert.ToInt16(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine($"Resultado:  { a + b}"); 
+                    break;
+                case 2:
+                    Console.WriteLine($"Resultado: { a - b}"); 
+                    break;
+                case 3: Console.WriteLine($"Resultado: { a * b}");
+                    break;
+                case 4:
+                    if (b != 0)
+                        Console.WriteLine($"Resultado:{a / b}");
+                    else 
+                        Console.WriteLine("Error: división por cero");
+                        break;
+                default:
+                    Console.WriteLine("Opción inválida");
+                    break;
+            }
+        }
+    }
+}
