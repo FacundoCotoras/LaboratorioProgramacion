@@ -1,0 +1,26 @@
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int suma = 0;
+            int[] numeros = new int[5];
+            int max = -999999999;
+            for(int i = 0; i < numeros.Length; i++)
+            {
+                Console.WriteLine("Ingrese un numero: ");
+                numeros[i] = int.Parse(Console.ReadLine());
+                suma = suma + numeros[i];
+                if(max < numeros[i])
+                {
+                    max = numeros[i];
+                } 
+            }
+            Console.WriteLine($"El promedio de lo numeros es de {suma / numeros.Length}");
+            Console.WriteLine($"El Numero mas grande es {max}");
+        }
+    }
+}
