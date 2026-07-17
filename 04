@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double[] Notas = new double[30];
+        double Suma = 0;
+        double Promedio;
+
+        for (int i = 0; i < Notas.Length; i++)
+        {
+            Console.Write($"Ingrese la nota del alumno {i + 1}: ");
+            Notas[i] = Convert.ToDouble(Console.ReadLine());
+
+            Suma += Notas[i];
+        }
+
+        Promedio = Suma / Notas.Length;
+
+        Console.WriteLine($"El promedio general del curso es: {Promedio}");
+    }
+}
