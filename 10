@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] Vector = new int[10];
+
+        double Suma = 0;
+        int Producto = 1;
+        int Cantidad = 0;
+        double Promedio;
+
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write($"Ingrese el elemento {i + 1}: ");
+            Vector[i] = Convert.ToInt32(Console.ReadLine());
+
+            Suma += Vector[i];
+            Producto *= Vector[i];
+        }
+
+        Promedio = Suma / 10;
+
+        for (int i = 0; i < 10; i++)
+        {
+            if (Vector[i] < Promedio)
+            {
+                Cantidad++;
+            }
+        }
+
+        Console.WriteLine($"La suma de los elementos es: {Suma}");
+        Console.WriteLine($"El producto de los elementos es: {Producto}");
+        Console.WriteLine($"El promedio es: {Promedio}");
+        Console.WriteLine($"La cantidad de elementos por debajo del promedio es: {Cantidad}");
+    }
+}
