@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double[] Sueldos = new double[20];
+
+        int Mayores = 0;
+        int Menores = 0;
+
+        for (int i = 0; i < Sueldos.Length; i++)
+        {
+            Console.Write($"Ingrese el sueldo de la persona {i + 1}: ");
+            Sueldos[i] = Convert.ToDouble(Console.ReadLine());
+
+            if (Sueldos[i] > 2000)
+            {
+                Mayores++;
+            }
+            else
+            {
+                Menores++;
+            }
+        }
+
+        Console.WriteLine($"Personas que ganan más de $2000: {Mayores}");
+        Console.WriteLine($"Personas que ganan $2000 o menos: {Menores}");
+    }
+}
