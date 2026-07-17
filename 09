@@ -1,0 +1,59 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int Numero;
+        int Primero;
+        int Ultimo;
+        int Anterior;
+
+        bool Ascendente = true;
+        bool Descendente = true;
+
+        Console.Write("Ingrese un numero (0 para finalizar): ");
+        Numero = Convert.ToInt32(Console.ReadLine());
+
+        Primero = Numero;
+        Anterior = Numero;
+
+        Console.Write("Ingrese un numero (0 para finalizar): ");
+        Numero = Convert.ToInt32(Console.ReadLine());
+
+        while (Numero != 0)
+        {
+            if (Numero > Anterior)
+            {
+                Descendente = false;
+            }
+
+            if (Numero < Anterior)
+            {
+                Ascendente = false;
+            }
+
+            Anterior = Numero;
+
+            Console.Write("Ingrese un numero (0 para finalizar): ");
+            Numero = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Ultimo = Anterior;
+
+        if (Ascendente)
+        {
+            Console.WriteLine("Los numeros fueron ingresados de forma ascendente.");
+        }
+        else if (Descendente)
+        {
+            Console.WriteLine("Los numeros fueron ingresados de forma descendente.");
+        }
+        else
+        {
+            Console.WriteLine("Los numeros fueron ingresados de forma desordenada.");
+        }
+
+        Console.WriteLine($"La suma entre el primer y el ultimo numero es: {Primero + Ultimo}");
+    }
+}
