@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int Num1 = 1;
+        int Num2 = 1;
+        int Suma;
+
+        Console.Write($"{Num1} {Num2} ");
+
+        for (int i = 0; i < 10; i++)
+        {
+            Suma = Num1 + Num2;
+
+            Console.Write($"{Suma} ");
+
+            Num1 = Num2;
+            Num2 = Suma;
+        }
+    }
+}
