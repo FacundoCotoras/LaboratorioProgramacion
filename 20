@@ -1,0 +1,53 @@
+using System;
+namespace ordenamiento
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double aux = 0;
+            double aux1 = 0;
+            int cant = 0;
+            Console.WriteLine("Ingrese la cantidad de productos que ingresara: ");
+            cant = int.Parse(Console.ReadLine());
+            double[] vector = new double[cant];
+            double[] pos = new double[cant];
+            for (int i = 0; i < cant; i++)
+            {
+                Console.WriteLine($"Precio del producto {i+1}");
+                vector[i] = double.Parse(Console.ReadLine());
+                pos[i] = i+1;
+            }
+
+            for (int i = 0; i < vector.Length - 1; i++)
+            {
+                for (int j = i + 1; j < vector.Length; j++)
+                {
+                    if (vector[i] > vector[j])
+                    {
+                        aux = vector[i];
+                        vector[i] = vector[j];
+                        vector[j] = aux;
+                        aux1 = pos[i];
+                        pos[i] = pos[j];
+                        pos[j] = aux1;
+                    }
+                }
+            }
+            for (int i = 0; i < cant; i++)
+            {
+                Console.WriteLine($"Producto {pos[i]} - {vector[i]}$");
+            }
+            Console.WriteLine("--------------Despues de impuestos--------------");
+            for (int i = 0; i < cant; i++)
+            {
+                vector[i] = vector[i] * 1.15;
+            }
+            for (int i = 0; i < cant; i++)
+            {
+                Console.WriteLine($"Producto {pos[i]} - {vector[i]}$");
+            }
+        }
+    }
+}
