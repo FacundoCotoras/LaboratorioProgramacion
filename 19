@@ -1,0 +1,33 @@
+using System.Formats.Tar;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] Numeros = new int[15];
+            int[] bisiesto = new int[15];
+            for (int i = 0; i < 15; i++)
+            {
+                do
+                {
+                    Console.WriteLine($"Ingresate el numero {i+1}");
+                    Numeros[i] = int.Parse(Console.ReadLine());
+                } while (Numeros[i] > 9999);
+                if (Numeros[i] % 4 == 0)
+                {
+                    bisiesto[i] = Numeros[i];
+                }
+
+            }
+            Console.WriteLine("Los años bisiestos serian: ");
+            foreach (int n in bisiesto)
+            {
+                
+                if(n != 0)
+                    Console.WriteLine(n);
+            }
+        }
+    }
+}
