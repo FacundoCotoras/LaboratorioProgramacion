@@ -1,0 +1,74 @@
+using System;
+namespace ordenamiento
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] desc = new int[20];
+            int[] asc = new int[20];
+            int[] vector = new int[20];
+            int aux = 0;
+            Console.WriteLine("ingrese el vector de 20 posiciones");
+            for (int i = 0; i < vector.Length; i++)
+            {
+                vector[i] = int.Parse(Console.ReadLine());
+            }
+
+
+
+            for (int i = 0; i < vector.Length - 1; i++)
+            {
+                for (int j = i + 1; j < vector.Length; j++)
+                {
+                    if (vector[i] > vector[j])
+                    {
+                        aux = vector[i];
+                        vector[i] = vector[j];
+                        vector[j] = aux;
+                    }
+                }
+            }
+            for(int i =0; i<vector.Length; i++)
+            {
+                asc[i] = vector[i];
+            }
+
+            for (int i = 0; i < vector.Length - 1; i++)
+            {
+                for (int j = i + 1; j < vector.Length; j++)
+                {
+                    if (vector[i] < vector[j])
+                    {
+                        aux = vector[i];
+                        vector[i] = vector[j];
+                        vector[j] = aux;
+                    }
+                }
+            }
+            for (int i = 0; i < vector.Length; i++)
+            {
+                desc[i] = vector[i];
+            }
+            Console.WriteLine("-----------Vector Descendente-------------");
+            foreach(int n in desc)
+            {
+                Console.WriteLine(n);
+            }
+            Console.WriteLine("-----------Vector Ascendente-------------");
+            foreach (int n in asc)
+            {
+                Console.WriteLine(n);
+            }
+            for (int i = 0; i < vector.Length; i++)
+            {
+                vector[i]=asc[i] * desc[i];
+            }
+            Console.WriteLine("-----------Producto de vectores-------------");
+            foreach (int n in vector)
+            {
+                Console.WriteLine(n);
+            }
+        }
+    }
+}
