@@ -1,0 +1,62 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int y = 0;
+            int x = 0;
+            int cant = 0;
+            int[] Num = new int[10];
+            int[] Num2 = new int[10];
+            Console.WriteLine("Primer Vector");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Ingrese un Numero: ");
+                Num[i] = int.Parse(Console.ReadLine());
+                if (Num[i] % 2 == 0)
+                {
+                    cant++;
+                }
+            }
+            Console.WriteLine("Segundo Vector");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Ingrese un Numero: ");
+                Num2[i] = int.Parse(Console.ReadLine());
+                if (Num2[i] % 2 != 0)
+                {
+                    cant++;
+                }
+            }
+            Console.WriteLine("---------------------------");
+            int[] Num3 = new int[cant];
+            for(int i = 0; i < 10; i++)
+            {
+                if (Num[i] % 2 == 0)
+                {
+                    Num3[x] = Num[i];
+                    Console.WriteLine(Num3[x]);
+                    x++;
+
+                }
+            }
+            Console.WriteLine("--------------------");
+            for (int i = 0; i < 10; i++)
+            {
+                if (Num2[i] % 2 != 0)
+                {
+                   
+                    Num3[x + y] = Num2[i];
+                    Console.WriteLine(Num3[x + y]);
+                    y++;
+                }
+            }
+            Console.WriteLine("---------------------------");
+            foreach(int n in Num3)
+            {
+                Console.WriteLine(n);
+            }
+        }
+    }
+}
