@@ -1,0 +1,23 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] Num = new int[6];
+            for(int i = 0; i < 6; i++)
+            {
+                Console.WriteLine("Ingrese un numero: ");
+                Num[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("-----------------------------------");
+            foreach(int N in Num)
+            {
+                if(N % 2 == 0)
+                {
+                    Console.WriteLine(N);
+                }
+            }
+        }
+    }
+}
