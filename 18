@@ -1,0 +1,33 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] Numeros = new int[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Ingrese un numero");
+                Numeros[i] = int.Parse(Console.ReadLine());
+            }
+
+            if (Numeros[0] == Numeros[1] && Numeros[1] == Numeros[2] && Numeros[1] == Numeros[3] && Numeros[1] == Numeros[4] && Numeros[1] == Numeros[5] && Numeros[1] == Numeros[6] && Numeros[1] == Numeros[7] && Numeros[1] == Numeros[8] && Numeros[1] == Numeros[9])
+            {
+                Console.WriteLine("--1--");
+            }
+            else if (Numeros[0] < Numeros[1] && Numeros[1] < Numeros[2] && Numeros[2] < Numeros[3] && Numeros[3] < Numeros[4] && Numeros[4] < Numeros[5] && Numeros[5] < Numeros[6] && Numeros[6] < Numeros[7] && Numeros[7] < Numeros[8] && Numeros[8] < Numeros[9])
+            {
+                Console.WriteLine("--2--");
+            }
+            else if (Numeros[0] > Numeros[1] && Numeros[1] > Numeros[2] && Numeros[2] > Numeros[3] && Numeros[3] > Numeros[4] && Numeros[4] > Numeros[5] && Numeros[5] > Numeros[6] && Numeros[6] > Numeros[7] && Numeros[7] > Numeros[8] && Numeros[8] > Numeros[9])
+            {
+                Console.WriteLine("--3--");
+            }
+            else
+            {
+                Console.WriteLine("--4--");
+            }
+        }
+    }
+}
