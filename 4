@@ -1,0 +1,63 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] Matriz = new int[3, 12];
+            int coche = 0;
+            int linea = 0;
+            int suma = 0;
+            int sumaT = 0;
+            Console.WriteLine("-----------Valor Menor a 0 = SALIR-------------");
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Ingresa la Linea[0-2]: ");
+                    linea = int.Parse(Console.ReadLine());
+                } 
+                while (linea > 2);
+                if (linea < 0)
+                    break;
+                do
+                {
+                    Console.WriteLine("Ingrese el N° de Coche[0-11]: ");
+                    coche = int.Parse(Console.ReadLine());
+                } while (coche > 11);
+                if (coche < 0)
+                    break;
+                Console.WriteLine("Ingrese lo Recaudado: ");
+                Matriz[linea, coche] += int.Parse(Console.ReadLine());
+
+            } while (true);
+
+
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("                       coches");
+            
+            for (int filas = 0; filas < 3; filas++)
+            {
+                Console.Write("linea "+filas+"  ");
+                for (int col = 0; col < 12; col++)
+                {
+                    Console.Write($" {Matriz[filas, col]}");
+                }
+                Console.WriteLine("");
+            }
+            Console.WriteLine("-------------------------------------");
+            for(int filas = 0; filas < 3; filas++)
+            {
+                
+                for (int col = 0; col < 12; col++)
+                {
+                    suma = suma +  Matriz[filas, col];
+                    sumaT = sumaT + Matriz[filas, col];
+                }
+                Console.WriteLine("Los ingresos de la Linea " +filas+": " + suma);
+                suma = 0;
+            }
+            Console.WriteLine("La suma total de todo los Elementos: "+sumaT);
+        }
+    }
+}
