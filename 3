@@ -1,0 +1,48 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] Matriz = new int[2, 3];
+            int mayor = int.MaxValue;
+            int suma = 0;
+            for (int filas = 0; filas < 2; filas++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    Console.WriteLine($"Ingrese el numero [{filas}{col}]");
+                    Matriz[filas, col] = int.Parse(Console.ReadLine());
+                    if (Matriz[filas, col] < mayor)
+                        mayor = Matriz[filas, col];
+                }
+            }
+            for (int filas = 0; filas < 2; filas++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    if (filas == 0)
+                    {
+                        Matriz[filas, col] = Matriz[filas, col] * 4;
+                    }
+                    if (col == 2)
+                        Matriz[filas, col] = Matriz[filas, col] * 3;
+                }
+            }
+            Console.WriteLine("----------------------------------------------");
+            for (int filas = 0; filas < 2; filas++)
+            {
+
+                for (int col = 0; col < 3; col++)
+                {
+                    Console.Write($" {Matriz[filas, col]}");
+                    suma = suma + Matriz[filas, col];
+                }
+                Console.WriteLine("");
+            }
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine($"El Menor valor de la matriz: {mayor} ");
+            Console.WriteLine("La suma de todos los valores es: "+suma);
+        }
+    }
+}
