@@ -1,0 +1,48 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] Matriz = new int[2, 6];
+            double suma = 0;
+            int sumaTotal = 0;
+            double promedio = 0;
+            for (int Pisos = 0; Pisos < 2; Pisos++)
+            {
+                Console.WriteLine("Piso: " + Pisos);
+                for (int deptos = 0; deptos < 6; deptos++)
+                {
+
+                    Console.WriteLine("Ingrese la cantidad de habitantes del depto " + deptos + ": ");
+                    Matriz[Pisos, deptos] = int.Parse(Console.ReadLine());
+                    sumaTotal = sumaTotal + Matriz[Pisos, deptos];
+                }
+                suma = 0;
+            }
+           
+            for (int Alu = 0; Alu < 2; Alu++)
+            {
+                Console.Write("Piso "+Alu+"  ");
+                for (int col = 0; col < 6; col++)
+                {
+                    Console.Write(Matriz[Alu, col] +" ");
+                }
+                Console.WriteLine("");
+            }
+            for (int Alu = 0; Alu < 2; Alu++)
+            {
+                for (int col = 0; col < 6; col++)
+                {
+                    suma = suma + Matriz[Alu, col];
+                }
+                promedio = suma / 6;
+                Console.WriteLine("Promedio Piso "+Alu+": "+ promedio);
+
+                suma = 0;
+            }
+            Console.WriteLine($"La cantidad total de habitantes es de {sumaTotal}");
+        }
+    }
+
+}
