@@ -1,0 +1,28 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] Matriz = new int[2, 3];
+            
+            for(int filas = 0; filas < 2; filas++)
+            {
+                for(int col = 0; col < 3; col++)
+                {
+                    Console.WriteLine($"Ingrese el numero [{filas}{col}]");
+                    Matriz[filas, col] = int.Parse(Console.ReadLine());
+                }
+            }
+            for (int filas = 0; filas < 2; filas++)
+            {
+                Console.WriteLine("");
+                for (int col = 0; col < 3; col++)
+                {
+                    Console.Write($" {Matriz[filas, col]}");
+                }
+            }
+
+        }
+    }
+}
