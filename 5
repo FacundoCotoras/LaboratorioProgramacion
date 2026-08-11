@@ -1,0 +1,91 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double[,] Matriz = new double[100, 4];
+            double suma = 0;
+            for (int Alu = 0; Alu < 100; Alu++)
+            {
+                Console.WriteLine("Alumno: " + Alu);
+                for (int col = 0; col < 3; col++)
+                {
+                    do
+                    {
+                        Console.WriteLine("Ingrese La nota del Trimestre " + col + ": ");
+                        Matriz[Alu, col] = double.Parse(Console.ReadLine());
+                    } while (Matriz[Alu, col] < 0 || Matriz[Alu, col] > 10);
+                }
+
+            }
+            Console.Clear();
+            while (true)
+            {
+                int Alu = 0;
+                int col = 0;
+                string x = "";
+                Console.WriteLine("¿Desea Modificar alguna nota?");
+                x = Console.ReadLine();
+                x = x.ToLower();
+                if (x == "si")
+                {
+                    do
+                    {
+                        Console.WriteLine("Ingrese El N° de Legajo: ");
+                        Alu = int.Parse(Console.ReadLine());
+                    } while (Alu > 100 || Alu < 0);
+                    do
+                    {
+                        Console.WriteLine("Ingrese El N° de Trimestre: ");
+                        col = int.Parse(Console.ReadLine());
+                    } while (col > 3 || col < 0);
+                    Console.WriteLine("------------------------------------");
+                    Console.WriteLine("La nota de ese Alumno es de: " + Matriz[Alu, col]);
+                    Console.WriteLine("¿Desea Modificarla?");
+                    string y = Console.ReadLine();
+                    y = y.ToUpper();
+                    if (y == "SI")
+                    {
+                        do
+                        {
+                            Console.WriteLine("Ingrese la Nota nueva: ");
+                            Matriz[Alu, col] = double.Parse(Console.ReadLine());
+                        } while (Matriz[Alu, col] < 0 || Matriz[Alu, col] > 10);
+                    }
+                    else
+                    {
+                        Console.WriteLine("La nota no sera modificada");
+                        break;
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Las notas no seran modificadas");
+                    break;
+                }
+
+            }
+            for (int Alu = 0; Alu < 100; Alu++)
+            {
+                suma = 0;
+                for (int col = 0; col < 4; col++)
+                {
+                    suma = suma + Matriz[Alu, col];
+                }
+                Matriz[Alu, 3] = suma / 3;
+            }
+            Console.WriteLine("-----------------------------------------------");
+            for (int Alu = 0; Alu < 100; Alu++)
+            {
+                Console.Write("Alumno " + Alu + "  ");
+                for (int col = 0; col < 4; col++)
+                {
+                    Console.Write(Matriz[Alu, col] + " ");
+                }
+                Console.WriteLine("");
+            }
+        }
+    }
+}
