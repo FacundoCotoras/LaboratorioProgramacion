@@ -1,0 +1,51 @@
+using System;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] clientes = new int[100, 6];
+            int h = 0;
+            int y = 0;
+            while (h != 4)
+            {
+                Console.WriteLine("Ingrese el N° de Cliente: ");
+                y = int.Parse(Console.ReadLine());
+                Console.WriteLine("-------OPERACIONES--------");
+                Console.WriteLine("0.Depositar");
+                Console.WriteLine("1.Extraccion");
+                Console.WriteLine("2.Comisiones Deducidas");
+                Console.WriteLine("3.Intereses Acreditados");
+                Console.WriteLine("4.Salir");
+                h = int.Parse(Console.ReadLine());
+                switch (h)
+                {
+                    case 0:
+                        Console.WriteLine("Ingrese el Monto a Depositar");
+                        
+                        clientes[y, 0] += int.Parse(Console.ReadLine());
+                        break;
+                    case 1:
+                        Console.WriteLine("Ingrese el Monto a Extraer");
+                        clientes[y, 1] += clientes[y, 0];
+                        break;
+                    case 2:
+                        Console.WriteLine("Ingrese el Monto de Comisiones Deducidas");
+                        clientes[y, 2] = int.Parse(Console.ReadLine());
+                        break;
+                    case 3:
+                        Console.WriteLine("Ingrese el Monto de Intereses Acreditados");
+                        clientes[y, 3] = int.Parse(Console.ReadLine());
+                        break;
+                        
+                    default:
+                        Console.WriteLine("Ingrese un Valor Valido");
+                        break;
+                }
+            }
+            Console.WriteLine("Saliendo del programa");
+        }
+    }
+}
