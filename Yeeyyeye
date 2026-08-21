@@ -6,8 +6,6 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            // matriz: 100 clientes x 5 columnas
-            // 0 = depósitos, 1 = extracciones, 2 = comisiones, 3 = intereses, 4 = saldo
             double[,] clientes = new double[100, 5];
 
             int opcion = -1;
@@ -16,7 +14,7 @@ namespace ConsoleApp2
                 Console.Write("Ingrese el N° de Cliente (0-99): ");
                 int cliente = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("\n-------OPERACIONES--------");
+                Console.WriteLine("-------OPERACIONES--------");
                 Console.WriteLine("0. Depositar");
                 Console.WriteLine("1. Extracción");
                 Console.WriteLine("2. Comisiones Deducidas");
@@ -52,7 +50,7 @@ namespace ConsoleApp2
                         break;
 
                     case 4:
-                        Console.WriteLine("Saliendo...");
+                        Console.WriteLine("Cerrando Programa");
                         break;
 
                     default:
@@ -61,26 +59,23 @@ namespace ConsoleApp2
                 }
             }
 
-            // Calcular saldo al final
-            for (int i = 0; i < 100; i++)
+            for(int i = 0; i<100; i++)
             {
                 clientes[i, 4] = clientes[i, 0] - clientes[i, 1] - clientes[i, 2] + clientes[i, 3];
             }
 
-            // Mostrar matriz con \t
-            Console.WriteLine("\n===== MATRIZ DE CLIENTES =====");
+            Console.WriteLine("===== MATRIZ DE CLIENTES =====");
             Console.WriteLine("Cliente\tDepósitos\tExtracciones\tComisiones\tIntereses\tSaldo");
             for (int i = 0; i < 100; i++)
             {
                 Console.Write($"{i}\t");
                 for (int j = 0; j < 5; j++)
                 {
-                    Console.Write($"{clientes[i,j]}\t");
+                    Console.Write($"{clientes[i, j]}\t");
                 }
                 Console.WriteLine();
             }
 
-            // Buscar depósito máximo
             double maxDeposito = 0;
             for (int i = 0; i < 100; i++)
             {
@@ -90,7 +85,8 @@ namespace ConsoleApp2
                 }
             }
 
-            Console.WriteLine($"\nMáximo depósito realizado: {maxDeposito}");
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.WriteLine($"Máximo depósito realizado: {maxDeposito}");
             Console.WriteLine("Clientes con ese depósito:");
             for (int i = 0; i < 100; i++)
             {
@@ -99,6 +95,7 @@ namespace ConsoleApp2
                     Console.WriteLine($"Cliente {i}");
                 }
             }
+
         }
     }
 }
