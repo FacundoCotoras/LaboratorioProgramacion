@@ -1,0 +1,67 @@
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[5, 5];
+            int cant = 1;
+            int cant1 = 1;
+            Console.WriteLine("Ingrese los numeros en la Diagonal: ");
+            for (int i = 0; i < 5; i++)
+            {
+                matriz[i, i] = int.Parse(Console.ReadLine());
+            }
+            for (int i=0; i < 5; i++)
+            {
+                Console.WriteLine("");
+                for (int x = 0; x < 5; x++)
+                {
+                    Console.Write(matriz[i, x]+"\t");
+                }
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Ingrese los Numeros del Triangulo Superior: ");
+            for (int i = 0; i < 5; i++)
+            {
+
+                for(int x = cant; x < 5; x++)
+                {
+                    matriz[i, x] = int.Parse(Console.ReadLine());
+                }
+                cant++;
+            }
+            Console.WriteLine("---------------------------------------------");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("");
+                for (int x = 0; x < 5; x++)
+                {
+                    Console.Write(matriz[i, x] + "\t");
+                }
+            }
+            Console.WriteLine("");
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("Ingrese los Numeros Del Triangulo Inferior");
+
+            for (int i = cant1; i < 5; i++)
+            {
+
+                for (int x = 0; x < cant1; x++)
+                {
+                    matriz[i, x] = int.Parse(Console.ReadLine());
+                }
+                cant1++;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("");
+                for (int x = 0; x < 5; x++)
+                {
+                    Console.Write(matriz[i, x] + "\t");
+                }
+            }
+
+        }
+    }
+}
