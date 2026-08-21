@@ -1,0 +1,72 @@
+using System;
+using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[10, 2];
+            bool afuera = false;
+            int aux;
+            Console.WriteLine("Numero de socio = 0 para finalizar");
+            for(int i = 0; i<10; i++)
+            {
+                Console.WriteLine("Ingrese el N° de Socio(0), y la Edad(1)");
+                for(int x = 0; x < 2; x++)
+                {
+
+                    Console.WriteLine(x+": ");
+                    matriz[i, x] = int.Parse(Console.ReadLine());
+                    if (x == 0 && matriz[i, x] == 0)
+                    {
+                        afuera = true;
+                        break;
+
+                    }
+                }
+                if (afuera == true)
+                    break;
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine();
+                for (int x = 0; x < 2; x++)
+                {
+                    Console.Write(matriz[i, x]+"\t");
+                }
+            }
+            for (int i = 0; i < 10 - 1; i++)
+            {
+                for (int j = i + 1; j < 10; j++)
+                {
+                    if (matriz[i, 1] > matriz[j, 1])
+                    {
+                        aux = matriz[i, 1];
+                        matriz[i, 1] = matriz[j, 1];
+                        matriz[j, 1] = aux;
+                        aux = matriz[i, 0];
+                        matriz[i, 0] = matriz[j, 0];
+                        matriz[j, 0] = aux;
+                    }
+                }
+            }
+            Console.WriteLine("-----------------------------------------------------");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine();
+                for (int x = 0; x < 2; x++)
+                {
+                    Console.Write(matriz[i, x] + "\t");
+                }
+            }
+
+
+
+
+
+
+        }
+    }
+}
