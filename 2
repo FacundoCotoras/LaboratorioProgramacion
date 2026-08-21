@@ -13,9 +13,9 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            Productos[] producto = new Productos[5];
+            Productos[] producto = new Productos[10];
 
-            for(int i= 0; i<3; i++)
+            for(int i= 0; i<10; i++)
             {
                 Console.Write($"Ingrese el codigo del producto {i +1}: ");
                 producto[i].codigo = int.Parse(Console.ReadLine());
@@ -30,12 +30,12 @@ namespace ConsoleApp2
             int a = 0;
             int b = 0;
             Console.WriteLine("========================Lista de Productos========================");
-            for (int i=0; i<3; i++)
+            for (int i=0; i<10; i++)
             {
                 Console.WriteLine($"Codigo: {producto[i].codigo}, Nombre: {producto[i].nombre}, Precio: ${producto[i].precio}");
                 avg += producto[i].precio;
             }
-            for(int i=0; i < 3; i++)
+            for(int i=0; i < 10; i++)
             {
                 if (producto[i].precio > mayor)
                 {
@@ -49,7 +49,7 @@ namespace ConsoleApp2
                     b = i;
                 }
             }
-                avg = avg / 3;
+                avg = avg / 10;
             
 
 
