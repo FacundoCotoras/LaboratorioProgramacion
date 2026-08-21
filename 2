@@ -1,0 +1,40 @@
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[3, 3];
+            int fila = 0 ;
+            int col = 0;
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Ingrese los valores de la fila "+i+": ");
+                for (int x = 0; x < 3; x++)
+                {
+                    if(x % 2 == 0)
+                        matriz[i, x] = int.Parse(Console.ReadLine());
+                }
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Ingrese los valores de la fila " + i + ": ");
+                for (int x = 0; x < 3; x++)
+                {
+                    if (x % 2 != 0)
+                        matriz[i, x] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            for (int i=0; i < 3; i++)
+            {
+                Console.WriteLine("");
+                for (int x = 0; x < 3; x++)
+                {
+                    Console.Write(matriz[i, x]+"\t");
+                }
+            }
+        }
+    }
+}
