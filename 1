@@ -1,0 +1,41 @@
+using System;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        struct Alumno
+        {
+            public string nombre;
+            public int edad;
+            public double nota;
+        }
+
+        static void Main(string[] args)
+        {
+            Alumno[] alumnos = new Alumno[5];
+
+            for(int i= 0; i<5; i++)
+            {
+                Console.Write($"Ingrese el nombre del alumno {i +1}: ");
+                alumnos[i].nombre = Console.ReadLine();
+                Console.Write($"Ingrese la edad del alumno {i + 1}: ");
+                alumnos[i].edad = int.Parse(Console.ReadLine());
+                Console.Write($"Ingrese la nota del alumno {i + 1}: ");
+                alumnos[i].nota = double.Parse(Console.ReadLine());
+            }
+            int mayor = 0;
+
+            for(int i=0; i<5; i++)
+            {
+                if (alumnos[i].nota > alumnos[mayor].nota)
+                {
+                    mayor = i;
+                }
+            }
+            Console.WriteLine($"El alumno con mayor nota es {alumnos[mayor].nombre} con la nota {alumnos[mayor].nota} ");
+
+
+        }
+    }
+}
