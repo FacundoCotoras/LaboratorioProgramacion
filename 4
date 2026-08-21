@@ -1,0 +1,63 @@
+using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vector = new int[9];
+            int[,] matriz = new int[3, 3];
+            int aux = 0;
+            int m = 0;
+            Console.WriteLine("Ingrese la Matriz 3x3: ");
+            for (int i=0; i < 3; i++)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    matriz[i, x] = int.Parse(Console.ReadLine());
+                }
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    vector[m] = matriz[i, x];
+                    m++;
+                }
+            }
+            for (int i = 0; i < vector.Length - 1; i++)
+            {
+                for (int j = i + 1; j < vector.Length; j++)
+                {
+                    if (vector[i] > vector[j])
+                    {
+                        aux = vector[i];
+                        vector[i] = vector[j];
+                        vector[j] = aux;
+                    }
+                }
+            }
+            m = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    matriz[i, x] = vector[m];
+                    m++;
+                }
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine();
+                for (int x = 0; x < 3; x++)
+                {
+                    Console.Write(matriz[i, x]+"\t");
+                }
+            }
+
+
+        }
+    }
+}
