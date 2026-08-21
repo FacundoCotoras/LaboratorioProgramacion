@@ -1,0 +1,33 @@
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[6, 5];
+            int fila = 0 ;
+            int col = 0; 
+            while(true)
+            {
+                Console.WriteLine("Ingrese la Fila donde Ingresara el Valor: ");
+                fila = int.Parse(Console.ReadLine());
+                if(fila == 0)
+                {
+                    break;
+                }
+                Console.WriteLine("Ingrese la Columna donde Ingresara el Valor: ");
+                col = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el Valor: ");
+                matriz[fila, col] = int.Parse(Console.ReadLine());
+            }
+            for(int i=0; i < 6; i++)
+            {
+                Console.WriteLine("");
+                for (int x = 0; x < 5; x++)
+                {
+                    Console.Write(matriz[i, x]+"\t");
+                }
+            }
+        }
+    }
+}
