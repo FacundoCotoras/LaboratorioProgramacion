@@ -1,0 +1,55 @@
+using System;
+
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        struct Alumno
+        {
+            public string nombre;
+            public int edad;
+            public double nota;
+        }
+
+        static void Main(string[] args)
+        {
+            int u = 0;
+            Alumno[] alumnos = new Alumno[10];
+            double mayor = double.MinValue;
+            double menor = double.MaxValue;
+            double avg = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"Ingrese el nombre del alumno {i + 1}: ");
+                alumnos[i].nombre = Console.ReadLine();
+                if (alumnos[i].nombre.ToLower() == "fin")
+                    break;
+                u++;
+                Console.Write($"Ingrese la edad del alumno {i + 1}: ");
+                alumnos[i].edad = int.Parse(Console.ReadLine());
+                Console.Write($"Ingrese la nota del alumno {i + 1}: ");
+                alumnos[i].nota = double.Parse(Console.ReadLine());
+                avg += alumnos[i].nota;
+                if (alumnos[i].nota > mayor)
+                    mayor = alumnos[i].nota;
+                if (alumnos[i].nota < menor)
+                    menor = alumnos[i].nota;
+            }
+            for (int i = 0; i < u; i++)
+            {
+                Console.WriteLine("Alumno " + (i + 1));
+                Console.WriteLine("Nombre: " + alumnos[i].nombre);
+                Console.WriteLine("Nota: " + alumnos[i].nota);
+                Console.WriteLine("Edad: " + alumnos[i].edad);
+            }
+            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("El promedio de las notas es: "+avg/u);
+            Console.WriteLine("La nota mas alta: "+mayor);
+            Console.WriteLine("La nota mas baja: " + menor);
+
+
+
+        }
+    }
+}
