@@ -15,7 +15,9 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             Alumno[] alumnos = new Alumno[5];
-            int aux = 0;
+            double aux = 0;
+            string aux1 = "";
+            int aux2 = 0;
             for (int i = 0; i < 5; i++)
             {
                 Console.Write($"Ingrese el nombre del alumno {i + 1}: ");
@@ -31,14 +33,27 @@ namespace ConsoleApp2
                 for (int j = i + 1; j < alumnos.Length; j++)
                 {
                     if (alumnos[i].nota > alumnos[j].nota)
+
                     {
                         aux = alumnos[i].nota;
                         alumnos[i].nota = alumnos[j].nota;
                         alumnos[j].nota = aux;
+                        aux1 = alumnos[i].nombre;
+                        alumnos[i].nombre = alumnos[j].nombre;
+                        alumnos[j].nombre = aux1;
+                        aux2 = alumnos[i].edad;
+                        alumnos[i].edad = alumnos[j].edad;
+                        alumnos[j].edad = aux2;
                     }
                 }
             }
-
+            for (int i = 0; i < alumnos.Length; i++)
+            {
+                Console.WriteLine("Alumno "+(i+1));
+                Console.WriteLine("Nombre: " + alumnos[i].nombre);
+                Console.WriteLine("Nota: " + alumnos[i].nota);
+                Console.WriteLine("Edad: " + alumnos[i].edad);
+            }
 
         }
     }
