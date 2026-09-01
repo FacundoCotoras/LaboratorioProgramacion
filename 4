@@ -1,0 +1,60 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            bool ascendente = true;
+            bool descendente = true;
+            double x = 0;
+            double suma = 0;
+            double[] Numeros = new double[20];
+            int n = 0;
+            do
+            {
+                if (n == 20)
+                    break;
+                Console.WriteLine("Ingrese El Valor "+(x+1));
+                x = double.Parse(Console.ReadLine());
+                if (x == 0)
+                    break;
+                Numeros[n] = x;
+                n++;
+            } while (true);
+            Console.WriteLine("-----------");
+            foreach(double m in Numeros)
+            {
+                if(m == 0)
+                {
+                }
+                else
+                    Console.WriteLine(m);
+            }
+                
+            Console.WriteLine("-----------");
+
+            for(int i = 0; i<n - 1; i++)
+            {
+                if (Numeros[i] < Numeros[i + 1])
+                {
+                    descendente = false;
+                }
+                else if (Numeros[i] > Numeros[i + 1])
+                {
+                    ascendente = false;
+                }
+                else
+                {
+                    descendente = false;
+                    ascendente = false;
+                }
+            }
+            if(ascendente)
+                Console.WriteLine("Ascendente");
+            if (descendente)
+                Console.WriteLine("Descendente");
+            if (!ascendente && !descendente)
+                Console.WriteLine("desordenado");
+        }
+    }
+}
