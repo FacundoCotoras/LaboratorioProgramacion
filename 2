@@ -1,0 +1,45 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int contador = 0;
+            int h = 0;
+            double sum = 0;
+            double mayor = double.MinValue;
+            string[] nombres = new string[10];
+            double[] notas = new double[10];
+            for(int i = 0; i < notas.Length; i++)
+            {
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("Ingrese el Nombre del Alumno " + (i + 1));
+                nombres[i] = Console.ReadLine();
+                Console.WriteLine("Ingrese laNota del Alumno "+(i+1));
+                notas[i] = double.Parse(Console.ReadLine());
+                sum += notas[i];
+                if (notas[i] > mayor)
+                {
+                    mayor = notas[i];
+                    h = i;
+                }
+                if (notas[i] >= 6)
+                {
+                    contador++;
+                }
+            }
+            Console.WriteLine("--------------------------------------------------------------------");
+            for (int i = 0; i < notas.Length; i++)
+            {
+                Console.WriteLine("------------------------");
+                Console.WriteLine("Alumno: " + nombres[i]);
+                Console.WriteLine("Nota: "+notas[i]);
+
+            }
+            Console.WriteLine("--------------------------------------------------------------------");
+            Console.WriteLine("Cantidad de Aprobados: "+contador);
+            Console.WriteLine("La mayor Nota: " + mayor+" Posicion: "+(h+1));
+            Console.WriteLine("Promedio: "+(sum/notas.Length));
+        }
+    }
+}
